@@ -1,0 +1,202 @@
+/* Style Terminos */
+
+/* Logo de la ferretería */
+.Logo-Ferretería {
+  height: 50px;
+}
+
+/* Título de la ferretería */
+.nombre-ferreteria {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #f67337;
+  margin-left: 15px;
+  font-family: sans-serif;
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fondo general oscuro */
+body {
+  background-color: #121212;
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+}
+
+/* Contenedor general */
+.container, .container-terminos, .footer-container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Encabezado */
+header {
+  background-color: #000;
+  padding: 10px 0;
+}
+
+header .Logo-Ferretería {
+  height: 50px;
+}
+
+header .flex {
+  display: flex;
+  align-items: center;
+}
+
+/* Navegación (si aplica) */
+nav a {
+  color: #fff;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #f0a500;
+}
+
+/* Contenido principal */
+.container-terminos {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 40px 30px;
+  background-color: #1c1c1c;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(240, 165, 0, 0.1);
+  text-align: center; /* Centra los títulos y el botón */
+}
+
+.container-terminos h1 {
+  font-size: 2.4em;
+  margin-bottom: 30px;
+  border-bottom: 3px solid #f0a500;
+  display: inline-block;
+  padding-bottom: 10px;
+  color: #fff;
+}
+
+.container-terminos h2 {
+  font-size: 1.3em;
+  color: #f0a500;
+  margin-top: 35px;
+  margin-bottom: 10px;
+}
+
+.container-terminos p {
+  font-size: 1em;
+  color: #ddd;
+  margin: 12px 0 20px;
+  text-align: justify;
+}
+
+/* Botones */
+button, .volver-link {
+  background-color: #f0a500;
+  color: #000;
+  padding: 10px 20px;
+  border: none;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  margin: 30px auto 0;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.volver-link {
+  display: block;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+button:hover, .volver-link:hover {
+  background-color: #ffaa00;
+}
+
+/* Footer */
+footer {
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 30px 0;
+  margin-top: 40px;
+}
+
+footer h4 {
+  color: #ff6600;
+  margin-bottom: 10px;
+}
+
+footer a {
+  color: #ccc;
+  display: block;
+  margin: 5px 0;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #f0a500;
+}
+
+footer .Logo-Ferretería {
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+footer .copyright {
+  text-align: center;
+  padding-top: 20px;
+  color: #888;
+  font-size: 0.9em;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #111;
+    padding: 40px 20px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-between;
+}
+
+.footer-container .col {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-container h4 {
+    margin-bottom: 15px;
+    color: #ff6a00;
+}
+
+.footer-container a {
+    display: block;
+    margin-bottom: 8px;
+    color: #ccc;
+}
+
+.footer-container a:hover {
+    color: #ff6a00;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+    color: #777;
+}
+
+

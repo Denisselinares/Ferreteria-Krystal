@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ferretería Krystal</title>
+  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Elección de login o registro -->
+  <div id="login-choice" class="login-overlay">
+  <div id="login-choice" class="login-overlay">
+    <div class="login-form">
+      <h2>Bienvenido a Ferretería Krystal</h2>
+      <button onclick="showLoginForm()">Iniciar Sesión</button>
+      <button onclick="showRegisterForm()">Registrarse</button>
+    </div>
+  </div>
+
+  <!-- Login Form -->
+  <div id="login-overlay" class="login-overlay" style="display: none;">
+    <form class="login-form" id="login-form">
+      <h2>Iniciar Sesión</h2>
+      <input type="email" id="login-email" placeholder="Correo electrónico" required />
+      <input type="password" id="login-password" placeholder="Contraseña" required />
+      <button type="submit">Entrar</button>
+      <p><a href="#" onclick="showRegisterForm()">¿No tienes cuenta? Regístrate</a></p>
+    </form>
+  </div>
+
+  <!-- Register Form -->
+  <div id="register-overlay" class="login-overlay" style="display: none;">
+    <form class="login-form" id="register-form">
+      <h2>Registrarse</h2>
+      <input type="text" id="register-username" placeholder="Nombre de usuario" required />
+      <input type="email" id="register-email" placeholder="Correo electrónico" required />
+      <input type="password" id="register-password" placeholder="Contraseña" required />
+      <input type="password" id="register-confirm" placeholder="Confirmar contraseña" required />
+      <button type="submit">Registrar</button>
+      <p><a href="#" onclick="showLoginForm()">¿Ya tienes cuenta? Inicia sesión</a></p>
+    </form>
+  </div>
+
+  <!-- Mensaje de bienvenida -->
+  <div id="welcome-message" class="login-overlay" style="display: none;">
+    <div class="login-form">
+      <h2 id="welcome-text"></h2>
+      <button onclick="enterSite()">Entrar</button>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="container flex">
+      <a href="index.html"><img src="imagenes/Logo-Ferretería.png" class="Logo-Ferretería" alt="Logo Ferretería" /></a>
+      <nav>
+        <ul class="nav-bar flex">
+          <li><a href="index.html" class="active">Inicio</a></li>
+          <li><a href="shop.html">Tienda</a></li>
+          <li><a href="categorias.html">Categorías</a></li>
+          <li><a href="about.html">Nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="#" id="logout-btn" style="display:none;">Cerrar sesión</a></li>
+          <li class="bag"><a href="cart.html"><i class="bx bx-shopping-bag"></i></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-text">
+      <h4>Descuentos Especiales</h4>
+      <h2>Las Mejores Herramientas</h2>
+      <h1>Para Profesionales y Aficionados</h1>
+      <a href="categorias.html" class="btn">Comprar Ahora</a>
+    </div>
+  </section>
+
+  <!-- Promociones -->
+  <section class="promociones container">
+    <h2 class="promociones-title">Las Mejores Promociones</h2>
+    <div class="promociones-grid">
+      <div class="promo-card">
+        <img src="imagenes/PinturaPromocion.webp" alt="Promoción Pintura" />
+        <div class="promo-discount">
+          <span class="small">PRODUCTO</span>
+          <span class="big">GRATIS</span>
+        </div>
+        <div class="promo-text">
+          <div class="title">PRODUCTO GRATIS EN LA</div>
+          <div class="subtitle">COMPRA DE PINTURA</div>
+        </div>
+      </div>
+      <div class="promo-card">
+        <img src="imagenes/Taladro_inalambrico.webp" alt="Promoción Taladro" />
+        <div class="promo-discount">
+          <span class="small">HASTA</span>
+          <span class="big">40%</span>
+          <span class="small">DE AHORRO</span>
+        </div>
+        <div class="promo-text">
+          <div class="title">TALADRO CON</div>
+          <div class="subtitle">LA ÚLTIMA TECNOLOGÍA</div>
+        </div>
+      </div>
+      <div class="promo-card">
+        <img src="imagenes/Promocion desarmador.jpg" alt="Promoción Desarmador" />
+        <div class="promo-discount">
+          <span class="small">HASTA</span>
+          <span class="big">20%</span>
+          <span class="small">DE AHORRO</span>
+        </div>
+        <div class="promo-text">
+          <div class="title">FÁCIL DE USAR</div>
+          <div class="subtitle">PRÁCTICO Y SENCILLO</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container container">
+      <div class="col">
+        <img class="Logo-Ferretería" src="imagenes/Logo-Ferretería.png" alt="Logo Ferretería" />
+        <h4>Contacto</h4>
+        <p><strong>Email:</strong> ferreteriakristal910@gmail.com</p>
+        <p><strong>Teléfono:</strong> 22-95-53-38-51</p>
+        <p><strong>Horario:</strong> 10:00 am - 8:30 pm, Lunes - Sábado</p>
+        <p><strong>Domingo:</strong> 10:00 am - 3:30 pm</p>
+      </div>
+      <div class="col">
+        <h4>Enlaces</h4>
+        <a href="about.html">Nosotros</a>
+        <a href="privacidad.html">Política de Privacidad</a>
+        <a href="terminos.html">Términos y Condiciones</a>
+      </div>
+      <div class="col">
+        <h4>Redes Sociales</h4>
+        <a href="#"><i class="bx bxl-facebook"></i> Facebook</a>
+        <a href="#"><i class="bx bxl-instagram"></i> Instagram</a>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>© 2025 - Ferretería Kristal. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    const users = JSON.parse(localStorage.getItem("users")) || {};
+
+    function showLoginForm() {
+      document.getElementById("login-choice").style.display = "none";
+      document.getElementById("register-overlay").style.display = "none";
+      document.getElementById("login-overlay").style.display = "flex";
+    }
+
+    function showRegisterForm() {
+      document.getElementById("login-choice").style.display = "none";
+      document.getElementById("login-overlay").style.display = "none";
+      document.getElementById("register-overlay").style.display = "flex";
+    }
+
+    function showChoice() {
+      document.getElementById("login-choice").style.display = "flex";
+    }
+
+    function welcome(name) {
+      document.getElementById("welcome-text").innerHTML = `¡Hola <strong>${name}</strong>!<br>Bienvenido a <strong>Ferretería Krystal</strong>`;
+      document.querySelectorAll(".login-overlay").forEach(div => div.style.display = "none");
+      document.getElementById("welcome-message").style.display = "flex";
+    }
+
+    document.getElementById("register-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const username = document.getElementById("register-username").value.trim();
+      const email = document.getElementById("register-email").value.trim();
+      const password = document.getElementById("register-password").value;
+      const confirm = document.getElementById("register-confirm").value;
+
+      if (password !== confirm) {
+        alert("Las contraseñas no coinciden.");
+        return;
+      }
+
+      if (users[email]) {
+        alert("Este correo ya está registrado.");
+        return;
+      }
+
+      users[email] = { username, password };
+      localStorage.setItem("users", JSON.stringify(users));
+      localStorage.setItem("isLoggedIn", "true");
+      localStorage.setItem("currentUser", email);
+
+      welcome(username);
+    });
+
+    document.getElementById("login-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const email = document.getElementById("login-email").value.trim();
+      const password = document.getElementById("login-password").value;
+
+      if (!users[email] || users[email].password !== password) {
+        alert("Correo o contraseña incorrectos.");
+        return;
+      }
+
+      localStorage.setItem("isLoggedIn", "true");
+      localStorage.setItem("currentUser", email);
+      welcome(users[email].username);
+    });
+
+    function enterSite() {
+      document.getElementById("welcome-message").style.display = "none";
+      document.getElementById("logout-btn").style.display = "inline-block";
+    }
+
+    window.onload = function () {
+      const isLoggedIn = localStorage.getItem("isLoggedIn");
+      const currentUser = localStorage.getItem("currentUser");
+      if (isLoggedIn && currentUser && users[currentUser]) {
+        welcome(users[currentUser].username);
+        document.getElementById("logout-btn").style.display = "inline-block";
+      } else if (Object.keys(users).length > 0) {
+        showChoice();
+      } else {
+        showRegisterForm();
+      }
+    };
+
+    document.getElementById("logout-btn").addEventListener("click", function (e) {
+      e.preventDefault();
+      localStorage.removeItem("isLoggedIn");
+      localStorage.removeItem("currentUser");
+      location.reload();
+    });
+  </script>
+</body>
+</html>

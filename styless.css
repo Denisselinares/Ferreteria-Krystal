@@ -1,0 +1,818 @@
+/* General Reset */
+
+header {
+  background-color: #000;
+  padding: 10px 0;
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start !important; /* Forzar alineación a la izquierda */
+  text-align: left !important; /* Asegurar que no esté centrado */
+}
+
+/* Logo más pequeño */
+.Logo-Ferretería {
+  height: 35px;
+  margin-right: 10px;
+}
+
+/* Nombre de la ferretería en naranja y negrita */
+.nombre-ferreteria {
+  color: #f67337;
+  font-size: 1.8em;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+
+/* Header */
+header {
+  background-color: #000;
+  padding: 10px 0;
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Alinea a la izquierda */
+}
+
+.Logo-Ferretería {
+  height: 35px; /* Tamaño más pequeño */
+  margin-left: 15px; /* Opcional: separa del borde izquierdo */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #121212;
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background-color: #000;
+  padding: 10px 0;
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Logo-Ferretería {
+  height: 50px;
+}
+
+/* Contenedor de pago */
+.payment-container {
+  padding: 50px 20px;
+}
+
+.payment-container h2 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 30px;
+  color: #f0a500;
+}
+
+form#payment-form {
+  background-color: #1c1c1c;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: auto;
+  box-shadow: 0 0 15px rgba(240, 165, 0, 0.1);
+}
+
+form input[type="text"],
+form input[type="email"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: #2a2a2a;
+  color: #fff;
+}
+
+form input::placeholder {
+  color: #aaa;
+}
+
+.payment-options {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.payment-option {
+  display: flex;
+  align-items: center;
+}
+
+.payment-option input[type="radio"] {
+  margin-right: 10px;
+}
+
+.card-info,
+.oxxo-info {
+  display: none;
+  margin-top: 20px;
+}
+
+.card-info h4,
+.oxxo-info h4 {
+  color: #f0a500;
+  margin-bottom: 10px;
+}
+
+.card-info input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: none;
+  background-color: #2a2a2a;
+  color: #fff;
+}
+
+/* Confirmar pago (Comprar ahora) */
+button[type="submit"] {
+  background-color: #f0a500;
+  color: #000;
+  padding: 12px 25px;
+  border: none;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  display: block;
+  margin: 20px auto 0;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #ffaa00;
+}
+
+/* Modales */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+  background-color: #1c1c1c;
+  margin: 10% auto;
+  padding: 30px;
+  border: 1px solid #444;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 10px;
+  text-align: center;
+  color: #fff;
+}
+
+.modal-content h2 {
+  color: #f0a500;
+  margin-bottom: 15px;
+}
+
+.modal-content p {
+  margin-bottom: 10px;
+  font-size: 1em;
+}
+
+.modal-content .close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal-content .close:hover {
+  color: #fff;
+}
+
+/* Footer */
+footer {
+  background-color: #111;
+  padding: 40px 20px;
+  margin-top: 60px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+  color: #fff;
+}
+
+.footer-container .col {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-container h4 {
+  margin-bottom: 15px;
+  color: #ff6a00;
+}
+
+.footer-container a {
+  display: block;
+  margin-bottom: 8px;
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer-container a:hover {
+  color: #ff6a00;
+}
+
+footer .Logo-Ferretería {
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+footer .copyright {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 14px;
+  color: #777;
+}
+
+.volver-link {
+  display: inline-block;
+  background-color: #f0a500; /* Amarillo */
+  color: #000;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  text-align: center;
+  margin: 30px auto 0;
+}
+
+/* Centrar el <p> que contiene el botón */
+p {
+  text-align: center;
+}
+
+.volver-link:hover {
+  background-color: #ffaa00; /* Amarillo más fuerte al pasar el mouse */
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;         /* Centra horizontalmente */
+  padding: 20px;          /* Margen interno uniforme */
+}
+
+
+/* Estilo realista para ticket de compra */
+
+#ticket {
+  font-family: 'Courier New', Courier, monospace;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 25px 20px;
+  background: #fff;
+  border: 2px solid #000;
+  border-radius: 8px;
+  box-shadow:
+    0 2px 5px rgba(0,0,0,0.15),
+    inset 0 0 10px #ccc;
+  color: #000;
+  line-height: 1.3;
+}
+
+#ticket h2 {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+}
+
+#ticket p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+}
+
+#ticket p strong {
+  display: inline-block;
+  width: 130px;
+}
+
+#ticket table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0;
+  font-size: 0.9rem;
+}
+
+#ticket table th,
+#ticket table td {
+  border-bottom: 1px dashed #000;
+  padding: 8px 6px;
+  text-align: left;
+}
+
+#ticket table th {
+  border-bottom: 2px solid #000;
+  font-weight: bold;
+}
+
+#ticket table td.quantity,
+#ticket table th.quantity {
+  text-align: center;
+  width: 50px;
+}
+
+#ticket table td.price,
+#ticket table th.price {
+  text-align: right;
+  width: 80px;
+}
+
+#ticket .total {
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-align: right;
+  padding-top: 10px;
+  border-top: 2px solid #000;
+}
+
+#ticket p.emission {
+  margin-top: 20px;
+  font-style: italic;
+  font-size: 0.8rem;
+  text-align: right;
+  color: #333;
+}
+
+/* Botón para descargar ticket */
+#downloadTicketBtn {
+  background-color: #000;
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 15px auto 0;
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  transition: background-color 0.3s ease;
+  letter-spacing: 1.5px;
+}
+
+#downloadTicketBtn:hover {
+  background-color: #219150;
+}
+
+
+
+.ticket-format {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #fff;
+  color: #000;
+  padding: 20px;
+  border-radius: 8px;
+  max-height: 400px;
+  overflow-y: auto;
+  white-space: pre-wrap; /* Para que el texto se ajuste y mantenga formato */
+  box-shadow: 0 0 10px rgba(0,0,0,0.25);
+  border: 1px solid #333;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #1c1c1c;
+  margin: 10% auto;
+  padding: 30px 30px 60px; /* espacio inferior extra para botón */
+  border: 1px solid #444;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 10px;
+  text-align: center;
+  color: #fff;
+}
+
+#downloadTicketBtn {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 250px;
+  width: 100%;
+}
+
+
+
+
+/* ===========================================
+   ESTILOS ESPECÍFICOS SOLO PARA PÁGINA DE PAGO
+   PALETA: NEGRO, NARANJA, AMARILLO
+   =========================================== */
+
+/* SOLO para el nuevo resumen de productos */
+.resumen-pedido {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 30px rgba(255, 165, 0, 0.2);
+  border: 2px solid #ffa500;
+}
+
+.resumen-pedido h3 {
+  color: #000000;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 3px solid #ffa500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.resumen-pedido h3 i {
+  color: #ffa500;
+  font-size: 1.4rem;
+}
+
+/* SOLO para la nueva tabla de resumen */
+.resumen-tabla {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 25px;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+  border: 1px solid #ffd700;
+}
+
+.resumen-tabla thead {
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+}
+
+.resumen-tabla th {
+  padding: 18px 15px;
+  text-align: left;
+  color: #ffd700;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #ffa500;
+}
+
+.resumen-tabla td {
+  padding: 16px 15px;
+  border-bottom: 1px solid #f0f0f0;
+  color: #000000;
+  font-weight: 600;
+}
+
+.resumen-tabla tbody tr:nth-child(even) {
+  background-color: #fffaf0;
+}
+
+.resumen-tabla tbody tr:hover {
+  background: linear-gradient(135deg, #fff8dc 0%, #ffeaa7 100%);
+  transform: translateY(-1px);
+  transition: all 0.3s ease;
+}
+
+/* SOLO para el nuevo total amount */
+.total-amount {
+  background: linear-gradient(135deg, #ffa500 0%, #ff8c00 100%);
+  color: #000000;
+  padding: 20px;
+  border-radius: 12px;
+  font-size: 1.3rem;
+  font-weight: 800;
+  text-align: center;
+  margin: 0;
+  box-shadow: 0 6px 20px rgba(255, 165, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 2px solid #ffd700;
+}
+
+.total-amount i {
+  font-size: 1.5rem;
+  color: #000000;
+}
+
+/* SOLO para etiquetas del formulario de pago - letras blancas */
+#payment-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 700;
+  color: #ffffff !important;
+  font-size: 1rem;
+}
+
+/* SOLO para botones específicos de la página de pago */
+.btn-print,
+.btn-email {
+  background: linear-gradient(135deg, #ffa500 0%, #ffd700 100%);
+  color: #000000;
+  border: 2px solid #ffa500;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-print:hover,
+.btn-email:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 165, 0, 0.4);
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4a 100%);
+  color: #000000;
+}
+
+/* SOLO para contenedor de acciones de ticket */
+.ticket-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/* SOLO para el ticket - fondo blanco con letras negras */
+.ticket-format {
+  background: #ffffff !important;
+  color: #000000 !important;
+  padding: 20px;
+  border-radius: 8px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  border: 2px solid #000000;
+  margin-bottom: 20px;
+  overflow-x: auto;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* SOLO para el título del modal - letras blancas con marco negro */
+#paymentCardModal .modal-content h2,
+#paymentOxxoModal .modal-content h2 {
+  color: #ffffff !important;
+  background: #000000;
+  padding: 15px;
+  border-radius: 8px;
+  border: 3px solid #000000;
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 25px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+#paymentCardModal .modal-content h2 i,
+#paymentOxxoModal .modal-content h2 i {
+  color: #ffa500 !important;
+}
+
+/* SOLO para información OXXO específica */
+.oxxo-code-container {
+  text-align: center;
+}
+
+.oxxo-code-container p {
+  font-size: 1.1rem;
+  color: #000000;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.oxxo-code-container strong {
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+  color: #ffd700;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  border: 2px solid #ffa500;
+}
+
+/* SOLO para contenedor QR */
+.qr-container {
+  margin-top: 25px;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 2px solid #ffa500;
+  text-align: center;
+}
+
+.qr-container canvas {
+  border: 2px solid #ffd700;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.qr-instructions {
+  color: #000000;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* SOLO para elementos específicos del modal OXXO */
+.oxxo-modal-content {
+  text-align: center;
+}
+
+.oxxo-code-display {
+  margin-bottom: 25px;
+}
+
+.code-highlight {
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+  color: #ffd700;
+  padding: 20px 30px;
+  border-radius: 12px;
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+  margin: 15px 0;
+  display: inline-block;
+  box-shadow: 0 8px 25px rgba(255, 165, 0, 0.4);
+  border: 3px solid #ffa500;
+}
+
+.qr-modal-container {
+  margin: 25px 0;
+  padding: 20px;
+  background: linear-gradient(135deg, #fffaf0 0%, #fff8dc 100%);
+  border-radius: 12px;
+  border: 2px solid #ffd700;
+}
+
+.oxxo-instructions {
+  background: linear-gradient(135deg, #fff8dc 0%, #ffeaa7 100%);
+  padding: 25px;
+  border-radius: 12px;
+  margin: 20px 0;
+  border: 2px solid #ffa500;
+}
+
+.oxxo-instructions h4 {
+  color: #000000;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.oxxo-instructions ol {
+  text-align: left;
+  color: #000000;
+  font-weight: 600;
+}
+
+.warning-text {
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4a 100%);
+  color: #000000;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  border: 2px solid #ffa500;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin: 25px 0;
+  flex-wrap: wrap;
+}
+
+.btn-download,
+.btn-share,
+.btn-email-oxxo {
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+  color: #ffd700;
+  border: 2px solid #ffa500;
+  padding: 12px 20px;  
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  flex: 1;
+  min-width: 140px;
+  justify-content: center;
+}
+
+.btn-download:hover,
+.btn-share:hover,
+.btn-email-oxxo:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 165, 0, 0.4);
+  background: linear-gradient(135deg, #ffa500 0%, #ffd700 100%);
+  color: #000000;
+}
+
+/* SOLO para estados de email */
+.email-status {
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 700;
+  border: 2px solid transparent;
+}
+
+.email-status .text-success {
+  color: #000000;
+  background: linear-gradient(135deg, #90EE90 0%, #98FB98 100%);
+  border-color: #32CD32;
+}
+
+.email-status .text-error {
+  color: #ffffff;
+  background: linear-gradient(135deg, #FF6B6B 0%, #FF8E8E 100%);
+  border-color: #FF0000;
+}
+
+/* Animación solo para nuevos elementos */
+@keyframes fadeInPayment {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.resumen-pedido {
+  animation: fadeInPayment 0.6s ease-out;
+}
+
+/* Responsive solo para nuevos elementos */
+@media (max-width: 768px) {
+  .ticket-actions,
+  .modal-buttons {
+    flex-direction: column;
+  }
+  
+  .resumen-tabla {
+    font-size: 0.85rem;
+  }
+  
+  .resumen-tabla th,
+  .resumen-tabla td {
+    padding: 12px 8px;
+  }
+  
+  .code-highlight {
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+  }
+}

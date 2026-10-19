@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nosotros - Ferretería Krystal</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <style>
+    .descripcion-ferreteria {
+      background: #424242;
+      color: #fff;
+      padding: 30px;
+      margin: 40px auto;
+      width: 95%;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      font-family: Arial, sans-serif;
+      line-height: 1.7;
+    }
+    .descripcion-ferreteria h3,
+    .descripcion-ferreteria h4 {
+      color: #ffcc00;
+      margin-bottom: 10px;
+    }
+    .descripcion-ferreteria ul li {
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container flex">
+      <a href="index.html"><img src="imagenes/Logo-Ferretería.png" class="Logo-Ferretería" alt="Logo Ferretería" /></a>
+      <nav>
+        <ul class="nav-bar flex">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="shop.html">Tienda</a></li>
+          <li><a href="categorias.html">Categorías</a></li>
+          <li><a href="about.html" class="active">Nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li class="bag"><a href="cart.html"><i class="bx bx-shopping-bag"></i></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="descripcion-ferreteria">
+    <h3>Ferretería Krystal</h3>
+    <p><strong>Ubicación:</strong> Doctor Antonio Garcia Gomez entre izote y jinicuil, Reserva II, 91855 Veracruz, Ver.</p>
+  
+    <!-- Mapa interactivo -->
+    <div style="margin: 20px auto; max-width: 100%; text-align:center;">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d487.4512699635029!2d-96.1858389305594!3d19.199700927812074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85c34466352b5c9b%3A0xe721afcebf3bedf!2sFerreteria%20kristal!5e0!3m2!1ses!2smx!4v1746684327627!5m2!1ses!2smx"
+        width="100%" height="400" style="border:0; border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,0.3);" 
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  
+    <p><strong>Horario:</strong> Lunes a Sábado de 10:00 a.m. a 8:30 p.m. | Domingos de 10:00 a.m. a 3:30 p.m.</p>
+  
+    <h4>Misión</h4>
+    <p>Ofrecer productos de ferretería de alta calidad a precios accesibles, brindando una atención cercana y personalizada a cada cliente.</p>
+  
+    <h4>Visión</h4>
+    <p>Ser la ferretería líder en la zona, reconocida por su compromiso, servicio y variedad en productos.</p>
+  
+    <h4>¿Por qué elegirnos?</h4>
+    <ul>
+      <li>✔ Gran variedad de herramientas y materiales</li>
+      <li>✔ Asesoría especializada en tienda</li>
+      <li>✔ Atención amable y rápida</li>
+      <li>✔ Precios accesibles y promociones</li>
+    </ul>
+  
+    <h4>Testimonios</h4>
+    <blockquote style="border-left: 4px solid #ccc; margin: 10px 0; padding-left: 10px;">
+      “Siempre encuentro lo que necesito y me atienden de maravilla.” — <em>Juan H.</em>
+    </blockquote>
+    <blockquote style="border-left: 4px solid #ccc; margin: 10px 0; padding-left: 10px;">
+      “Los mejores precios en la zona y una atención excelente.” — <em>María L.</em>
+    </blockquote>
+  
+    <a href="shop.html" style="display:inline-block; margin-top:20px; background:#ff8800; color:#fff; padding:10px 20px; text-decoration:none; border-radius:5px;">Visita nuestra tienda</a>
+  </section>
+  
+
+  <script src="js/session.js"></script>
+  <script>
+    document.getElementById("searchBtn").addEventListener("click", function () {
+      const searchTerm = document.getElementById("searchInput").value.toLowerCase();
+      localStorage.setItem("searchTerm", searchTerm);
+      window.location.href = "shop.html";
+    });
+  </script>
+
+  <footer>
+    <div class="footer-container container">
+      <div class="col">
+        <img class="Logo-Ferretería" src="imagenes/Logo-Ferretería.png" alt="Logo Ferretería" />
+        <h4>Contacto</h4>
+        <p><strong>Email:</strong> ferreteriakristal910@gmail.com</p>
+        <p><strong>Teléfono:</strong> 22-95-53-38-51</p>
+        <p><strong>Horario:</strong> 10:00 am - 8:30 pm, Lunes - Sábado</p>
+        <p><strong>Domingo:</strong> 10:00 am - 3:30 pm</p>
+      </div>
+      <div class="col">
+        <h4>Enlaces</h4>
+        <a href="about.html">Nosotros</a>
+        <a href="privacidad.html">Política de Privacidad</a>
+        <a href="terminos.html">Términos y Condiciones</a>
+      </div>
+      <div class="col">
+        <h4>Redes Sociales</h4>
+        <a href="#"><i class="bx bxl-facebook"></i> Facebook</a>
+        <a href="#"><i class="bx bxl-instagram"></i> Instagram</a>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>© 2025 - Ferretería Kristal. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+</body>
+</html>

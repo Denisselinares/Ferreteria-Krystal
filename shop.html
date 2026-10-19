@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tienda - Ferretería Krystal</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<body>
+  <header>
+    <div class="container flex">
+      <a href="index.html"><img src="imagenes/Logo-Ferretería.png" class="Logo-Ferretería" alt="Logo Ferretería" /></a>
+      <nav>
+        <ul class="nav-bar flex">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="shop.html" class="active">Tienda</a></li>
+          <li><a href="categorias.html">Categorías</a></li>
+          <li><a href="about.html">Nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li class="bag"><a href="cart.html"><i class="bx bx-shopping-bag"></i></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h2 class="titulo-productos">Productos Destacados</h2>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide product-card">
+          <img src="imagenes/brocha_1.webp" alt="Brocha" />
+          <h4>Brocha</h4>
+          <p>$25.00 MXN</p>
+        </div>
+        <div class="swiper-slide product-card">
+          <img src="imagenes/taladro_12.webp" alt="Taladro" />
+          <h4>Taladro Eléctrico</h4>
+          <p>$1,530.00 MXN</p>
+        </div>
+        <div class="swiper-slide product-card">
+          <img src="imagenes/foco_24.webp" alt="Lampara Triple" />
+          <h4>Foco ahorrador</h4>
+          <p>$50.00 MXN</p>
+        </div>
+        <div class="swiper-slide product-card">
+          <img src="imagenes/pintura_gris.webp" alt="Pintura" />
+          <h4>Pintura Gris</h4>
+          <p>$55.00 MXN</p>
+        </div>
+         <div class="swiper-slide product-card">
+          <img src="imagenes/brocha_4.webp" alt="Brocha" />
+          <h4>Brocha cerdas sintéticas</h4>
+          <p>$105.00 MXN</p>
+        </div>
+        <div class="swiper-slide product-card">
+          <img src="imagenes/taladro_12.webp" alt="Taladro" />
+          <h4>Taladro 3/8" </h4>
+          <p>$1,530.00 MXN</p>
+        </div>
+        <div class="swiper-slide product-card">
+          <img src="imagenes/Barra_Seguridad.jpg" alt="Barra_Seguridad" />
+          <h4>Barra recta de seguridad</h4>
+          <p>$415.00 MXN</p>
+        </div>
+        <div class="swiper-slide product-card">
+          <img src="imagenes/desarmador_30.webp" alt="desarmador" />
+          <h4>Desarmador punta Torx</h4>
+          <p>$50.00 MXN</p>
+        </div>
+        <div class="swiper-slide product-card">
+          <img src="imagenes/arandela_18.webp" alt="arandela" />
+          <h4>Bolsa con 300 arandelas</h4>
+          <p>$11.00 MXN</p>
+        </div>
+        <div class="swiper-slide product-card">
+          <img src="imagenes/tornilleria_30_1.webp" alt="tornilleria" />
+          <h4>Bolsa con 30 tornillos</h4>
+          <p>$149.00 MXN</p>
+        </div>
+
+      </div>
+
+      <!-- Controles -->
+      <!-- Flechas -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container container">
+      <div class="col">
+        <img class="Logo-Ferretería" src="imagenes/Logo-Ferretería.png" alt="Logo Ferretería" />
+        <h4>Contacto</h4>
+        <p><strong>Email:</strong> ferreteriakristal910@gmail.com</p>
+        <p><strong>Teléfono:</strong> 22-95-53-38-51</p>
+        <p><strong>Horario:</strong> 10:00 am - 8:30 pm, Lunes - Sábado</p>
+        <p><strong>Domingo:</strong> 10:00 am - 3:30 pm</p>
+      </div>
+      <div class="col">
+        <h4>Enlaces</h4>
+        <a href="about.html">Nosotros</a>
+        <a href="privacidad.html">Política de Privacidad</a>
+        <a href="terminos.html">Términos y Condiciones</a>
+      </div>
+      <div class="col">
+        <h4>Redes Sociales</h4>
+        <a href="#"><i class="bx bxl-facebook"></i> Facebook</a>
+        <a href="#"><i class="bx bxl-instagram"></i> Instagram</a>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>© 2025 - Ferretería Kristal. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <script>
+    const swiper = new Swiper('.mySwiper', {
+      loop: true,
+      spaceBetween: 30,
+      slidesPerView: 3,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        1024: {
+          slidesPerView: 3
+        },
+        768: {
+          slidesPerView: 2
+        },
+        480: {
+          slidesPerView: 1
+        }
+      }
+    });
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contacto - Ferretería Krystal</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container flex">
+            <a href="index.html"><img src="imagenes/Logo-Ferretería.png" class="Logo-Ferretería" alt="Logo Ferretería" /></a>
+            <nav>
+                <ul class="nav-bar flex">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="shop.html">Tienda</a></li>
+                    <li><a href="categorias.html">Categorías</a></li>
+                    <li><a href="about.html">Nosotros</a></li>
+                    <li><a href="contacto.html" class="active">Contacto</a></li>
+                    <li class="bag"><a href="cart.html"><i class="bx bx-shopping-bag"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="contact-section">
+            <h2>Contáctanos</h2>
+            <p>Si tienes preguntas sobre productos, pedidos o servicios, no dudes en escribirnos. ¡Estamos para ayudarte!</p>
+
+            <div class="flex-wrap" style="display: flex; flex-wrap: wrap; gap: 30px; margin-top: 30px;">
+                <!-- Formulario -->
+                <form class="contact-form" id="contact-form">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="user_name" required />
+
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="user_email" required />
+
+                    <label for="message">Mensaje:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+
+                    <!-- Campo oculto para que aparezca el nombre "Ferretería Kristal" como remitente -->
+                    <input type="hidden" name="from_name" value="Ferretería Kristal" />
+
+                    <button type="submit">Enviar</button>
+                </form>
+
+                <!-- Información y mapa -->
+                <div class="contact-info" style="flex: 1; min-width: 300px;">
+                    <h4>📍Información de contacto</h4>
+                    <p><strong>Dirección:</strong><br />Doctor Antonio García Gómez entre Izote y Jinicuil, Reserva II, 91855 Veracruz, Ver.</p>
+                    <p><strong>📞Teléfono:</strong> 22-95-53-38-51</p>
+                    <p><strong>📧Correo:</strong>ferreteriakristal910@gmail.com</p>
+                    <p><strong>🕒Horario:</strong><br>
+                        Lunes a Sábado: 10:00 am - 8:30 pm<br>
+                        Domingo: 10:00 am - 3:30 pm
+                    </p>
+
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d487.4512699635029!2d-96.1858389305594!3d19.199700927812074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85c34466352b5c9b%3A0xe721afcebf3bedf!2sFerreteria%20kristal!5e0!3m2!1ses!2smx!4v1746684327627!5m2!1ses!2smx"
+                        width="100%"
+                        height="250"
+                        frameborder="0" 
+                        style="border: 0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                    ></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container container">
+            <div class="col">
+                <img class="Logo-Ferretería" src="imagenes/Logo-Ferretería.png" alt="Logo Ferretería" />
+                <h4>Contacto</h4>
+                <p><strong>Email:</strong> ferreteriakristal910@gmail.com</p>
+                <p><strong>Teléfono:</strong> 22-95-53-38-51</p>
+                <p><strong>Horario:</strong> 10:00 am - 8:30 pm, Lunes - Sábado</p>
+                <p><strong>Domingo:</strong> 10:00 am - 3:30 pm</p>
+            </div>
+            <div class="col">
+                <h4>Enlaces</h4>
+                <a href="about.html">Nosotros</a>
+                <a href="privacidad.html">Política de Privacidad</a>
+                <a href="terminos.html">Términos y Condiciones</a>
+            </div>
+            <div class="col">
+                <h4>Redes Sociales</h4>
+                <a href="#"><i class="bx bxl-facebook"></i> Facebook</a>
+                <a href="#"><i class="bx bxl-instagram"></i> Instagram</a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2025 - Ferretería Kristal. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Script para EmailJS -->
+    <script>
+        (function () {
+            emailjs.init("PSc41-UZfeXHYmjoi");
+        })();
+
+        document.getElementById("contact-form").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            emailjs
+                .sendForm("service_dtm5zn6", "template_q0s2y8p", this)
+                .then(function () {
+                    alert("Mensaje enviado correctamente.");
+                    document.getElementById("contact-form").reset();
+                })
+                .catch(function (error) {
+                    alert("Ocurrió un error. Inténtalo de nuevo.");
+                    console.error("EmailJS error:", error);
+                });
+        });
+    </script>
+</body>
+</html>
+
+

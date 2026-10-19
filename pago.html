@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pagar - Ferretería Krystal</title>
+  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styless.css" />
+  <!-- Librería QR Code -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+  <!-- EmailJS -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+
+  <header>
+    <div class="container flex">
+      <a href="index.html">
+        <img src="imagenes/Logo-Ferretería.png" class="Logo-Ferretería" alt="Logo Ferretería"/>
+      </a>
+      <h1 class="nombre-ferreteria">Ferretería Kristal</h1>
+    </div>
+  </header>
+
+  <section class="payment-container">
+    <div class="container">
+      <!-- Resumen de productos insertado por JS -->
+
+      <h2>Formulario de Pago</h2>
+      <form id="payment-form">
+        <label for="userName">Nombre completo</label>
+        <input type="text" id="userName" placeholder="Tu nombre completo" required>
+
+        <label for="userEmail">Correo electrónico</label>
+        <input type="email" id="userEmail" placeholder="tu@email.com" required>
+
+        <div class="payment-options">
+          <div class="payment-option">
+            <input type="radio" name="payment" value="tarjeta" id="tarjeta" required>
+            <label for="tarjeta">
+              <i class="bx bx-credit-card"></i>
+              Tarjeta
+            </label>
+          </div>
+          <div class="payment-option">
+            <input type="radio" name="payment" value="oxxo" id="oxxo">
+            <label for="oxxo">
+              <i class="bx bx-store"></i>
+              OXXO
+            </label>
+          </div>
+        </div>
+
+        <div class="card-info" style="display:none;">
+          <h4>Datos de la tarjeta</h4>
+          <div class="card-inputs">
+            <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19">
+            <div class="card-row">
+              <input type="text" id="cardExpiry" placeholder="MM/AA" maxlength="5">
+              <input type="text" id="cardCVV" placeholder="CVV" maxlength="4">
+            </div>
+          </div>
+        </div>
+
+        <div class="oxxo-info" style="display:none;">
+          <h4>Código OXXO</h4>
+          <div class="oxxo-code-container">
+            <p>Tu código de pago es: <strong><span id="oxxoReference"></span></strong></p>
+            <div class="qr-container">
+              <canvas id="qrcode"></canvas>
+              <p class="qr-instructions">
+                Escanea este código QR en OXXO para realizar tu pago
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-confirmar">
+          <i class="bx bx-check-circle"></i>
+          Confirmar Pago
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Modal Tarjeta -->
+  <div id="paymentCardModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeCardModal">&times;</span>
+      <h2><i class="bx bx-check-circle text-success"></i> Pago con Tarjeta Confirmado</h2>
+      <div class="ticket-container">
+        <pre id="ticketCardText" class="ticket-format"></pre>
+        <div class="ticket-actions">
+          <button class="btn-print" onclick="printTicket()">
+            <i class="bx bx-printer"></i>
+            Imprimir Ticket
+          </button>
+          <button class="btn-email" onclick="sendTicketByEmail()">
+            <i class="bx bx-envelope"></i>
+            Notificar a Ferretería Kristal
+          </button>
+        </div>
+        <div id="emailStatus" class="email-status"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal OXXO -->
+  <div id="paymentOxxoModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeOxxoModal">&times;</span>
+      <h2><i class="bx bx-check-circle text-success"></i> Pago por OXXO Confirmado</h2>
+      <div class="oxxo-modal-content">
+        <div class="oxxo-code-display">
+          <p>Tu código de pago es:</p>
+          <div class="code-highlight">
+            <span id="oxxoCode"></span>
+          </div>
+        </div>
+        <div class="qr-modal-container">
+          <canvas id="qrcodeModal"></canvas>
+        </div>
+        <div class="oxxo-instructions">
+          <h4>Instrucciones para pagar:</h4>
+          <ol>
+            <li>Acude a cualquier tienda OXXO</li>
+            <li>Presenta este código QR o menciona el código</li>
+            <li>Realiza tu pago en efectivo</li>
+            <li>Conserva tu comprobante</li>
+          </ol>
+          <p class="warning-text">
+            <i class="bx bx-time"></i>
+            El código tiene una vigencia de 24 horas
+          </p>
+
+        </div>
+        <div class="modal-buttons">
+          <button class="btn-download" onclick="downloadQR()">
+            <i class="bx bx-download"></i>
+            Descargar QR
+          </button>
+          <button class="btn-share" onclick="shareCode()">
+            <i class="bx bx-share"></i>
+            Compartir Código
+          </button>
+          <button class="btn-email-oxxo" onclick="sendOxxoByEmail()">
+            <i class="bx bx-envelope"></i>
+            Notificar a Ferretería Kristal
+          </button>
+        </div>
+        <div id="emailStatusOxxo" class="email-status"></div>
+      </div>
+    </div>
+  </div>
+
+  <p><a class="volver-link" href="shop.html">← Regresar a la tienda</a></p>
+
+  <footer>
+    <div class="footer-container container">
+      <div class="col">
+        <img class="Logo-Ferretería" src="imagenes/Logo-Ferretería.png" alt="Logo Ferretería" />
+        <h4>Contacto</h4>
+        <p><strong>Email:</strong> ferreteriakristal910@gmail.com</p>
+        <p><strong>Teléfono:</strong> 22-95-53-38-51</p>
+        <p><strong>Horario:</strong> 10:00 am - 8:30 pm, Lunes - Sábado</p>
+        <p><strong>Domingo:</strong> 10:00 am - 3:30 pm</p>
+      </div>
+      <div class="col">
+        <h4>Enlaces</h4>
+        <a href="about.html">Nosotros</a>
+        <a href="privacidad.html">Política de Privacidad</a>
+        <a href="terminos.html">Términos y Condiciones</a>
+      </div>
+      <div class="col">
+        <h4>Redes Sociales</h4>
+        <a href="#"><i class="bx bxl-facebook"></i> Facebook</a>
+        <a href="#"><i class="bx bxl-instagram"></i> Instagram</a>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>© 2025 - Ferretería Krystal. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+<script>
+  // Configuración de EmailJS
+  emailjs.init({
+    publicKey: "fc4FiQQgJmT3eRi4s", // Tu Public Key
+  });
+
+  const pedidoConfirmado = JSON.parse(localStorage.getItem('pedidoConfirmado'));
+  let oxxoReferenceCode = '';
+  let totalAmount = 0;
+  let ticketData = {};
+  let customerEmail = '';
+  let customerName = '';
+
+  // Verificar si hay pedido confirmado
+  if (!pedidoConfirmado || pedidoConfirmado.length === 0) {
+    alert("No hay un pedido confirmado. Serás redirigido al carrito.");
+    window.location.href = "cart.html";
+  } else {
+    // Crear resumen de productos
+    const resumenDiv = document.createElement('div');
+    resumenDiv.classList.add('resumen-pedido');
+    resumenDiv.innerHTML = `
+      <h3><i class="bx bx-cart"></i> Productos a pagar:</h3>
+      <table class="resumen-tabla">
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+            <th>Subtotal</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${pedidoConfirmado.map(item => `
+            <tr>
+              <td>${item.name}</td>
+              <td>${item.quantity}</td>
+              <td>$${item.price.toFixed(2)}</td>
+              <td>$${(item.price * item.quantity).toFixed(2)}</td>
+            </tr>`).join('')}
+        </tbody>
+      </table>
+    `;
+
+    totalAmount = pedidoConfirmado.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    const totalP = document.createElement('p');
+    totalP.classList.add('total-amount');
+    totalP.innerHTML = `<strong><i class="bx bx-money"></i> Total a pagar: $${totalAmount.toFixed(2)}</strong>`;
+    resumenDiv.appendChild(totalP);
+
+    const container = document.querySelector('.payment-container .container');
+    container.insertBefore(resumenDiv, container.querySelector('h2'));
+  }
+
+  // Función para generar código OXXO ficticio
+  function generateFictionalOxxoCode() {
+    const prefix = 'DEMO';
+    const timestamp = Date.now().toString().slice(-6);
+    const random = Math.random().toString(36).substr(2, 6).toUpperCase();
+    return `${prefix}${timestamp}${random}`;
+  }
+
+  // Función para generar QR
+  function generateQR(text, canvasId, size = 200) {
+    const canvas = document.getElementById(canvasId);
+    if (canvas) {
+      const qr = new QRious({
+        element: canvas,
+        value: text,
+        size: size,
+        background: 'white',
+        foreground: '#2c3e50',
+        level: 'M'
+      });
+    }
+  }
+
+  // Función para enviar ticket por email SOLO A LA EMPRESA
+  async function sendTicketByEmail() {
+    const statusDiv = document.getElementById('emailStatus');
+    statusDiv.innerHTML = '<i class="bx bx-loader-alt bx-spin"></i> Enviando a Ferretería Kristal...';
+    
+    // Validar datos antes de enviar
+    if (!ticketData.customerEmail || !ticketData.customerName) {
+      statusDiv.innerHTML = '<i class="bx bx-error text-error"></i> Datos incompletos';
+      return;
+    }
+
+    console.log('Enviando email a la empresa con datos:', {
+      user_name: ticketData.customerName,
+      user_email: ticketData.customerEmail,
+      payment_method: "Tarjeta",
+      payment_status: "Confirmado",
+      payment_details: ticketData.ticketText,
+      total_pago: ticketData.totalAmount,
+      time: ticketData.date
+    });
+
+    try {
+      // Preparar datos según tu template
+      const emailData = {
+        user_name: ticketData.customerName || 'Cliente',
+        user_email: ticketData.customerEmail || 'sin-email@ejemplo.com',
+        payment_method: "Tarjeta",
+        payment_status: "Confirmado",
+        payment_details: ticketData.ticketText || 'Ticket no disponible',
+        total_pago: ticketData.totalAmount || '0.00',
+        time: ticketData.date || new Date().toLocaleString('es-MX')
+      };
+
+      // Enviar SOLO a la empresa
+      console.log('Enviando a Ferretería Kristal...');
+      const response = await emailjs.send("service_epige0p", "template_aihd9mn", emailData);
+      console.log('Respuesta enviada:', response);
+
+      statusDiv.innerHTML = '<i class="bx bx-check text-success"></i> ¡Notificación enviada a Ferretería Kristal!';
+      
+    } catch (error) {
+      console.error('Error completo:', error);
+      console.error('Detalles del error:', {
+        status: error.status,
+        text: error.text,
+        message: error.message
+      });
+      
+      let errorMsg = 'Error al enviar notificación';
+      if (error.status === 400) {
+        errorMsg = 'Error: Datos inválidos';
+      } else if (error.status === 401) {
+        errorMsg = 'Error: Credenciales incorrectas';
+      } else if (error.status === 404) {
+        errorMsg = 'Error: Template no encontrado';
+      } else if (error.text) {
+        errorMsg = `Error: ${error.text}`;
+      }
+      
+      statusDiv.innerHTML = `<i class="bx bx-error text-error"></i> ${errorMsg}`;
+    }
+  }
+
+  // Función para enviar código OXXO SOLO A LA EMPRESA (CORREGIDA)
+  async function sendOxxoByEmail() {
+    const statusDiv = document.getElementById('emailStatusOxxo');
+    statusDiv.innerHTML = '<i class="bx bx-loader-alt bx-spin"></i> Enviando a Ferretería Kristal...';
+    
+    console.log('=== DEBUG OXXO EMAIL ===');
+    console.log('customerName:', customerName);
+    console.log('customerEmail:', customerEmail);
+    console.log('oxxoReferenceCode:', oxxoReferenceCode);
+    console.log('totalAmount:', totalAmount);
+    
+    try {
+      const emailData = {
+        user_name: customerName || 'Cliente',
+        user_email: customerEmail || 'sin-email@ejemplo.com',
+        payment_method: "OXXO (DEMO)",
+        payment_status: "Pendiente",
+        payment_details: `CÓDIGO OXXO DEMO: ${oxxoReferenceCode}
+
+Este es un código de demostración.
+No válido para pagos reales.
+
+PRODUCTOS:
+${pedidoConfirmado.map(item => `${item.name} x${item.quantity} - $${(item.price * item.quantity).toFixed(2)}`).join('\n')}
+
+INSTRUCCIONES:
+1. Acudir a cualquier OXXO
+2. Presentar código: ${oxxoReferenceCode}
+3. Pagar $${totalAmount.toFixed(2)} en efectivo
+4. Conservar comprobante`,
+        total_pago: totalAmount.toFixed(2),
+        time: new Date().toLocaleString('es-MX')
+      };
+
+      console.log('Datos para enviar:', emailData);
+      console.log('Service ID: service_epige0p');
+      console.log('Template ID: template_aihd9mn');
+
+      // Enviar a la empresa usando el MISMO template que funciona para tarjeta
+      const response = await emailjs.send("service_epige0p", "template_aihd9mn", emailData);
+      console.log('✅ Respuesta OXXO exitosa:', response);
+      
+      statusDiv.innerHTML = '<i class="bx bx-check text-success"></i> ¡Notificación enviada a Ferretería Kristal!';
+      
+    } catch (error) {
+      console.error('❌ Error al enviar OXXO:', error);
+      console.error('Error details:', {
+        status: error.status,
+        text: error.text,
+        message: error.message
+      });
+      
+      let errorMsg = 'Error al enviar notificación';
+      if (error.status === 404) {
+        errorMsg = 'Error: Template no encontrado';
+      } else if (error.text) {
+        errorMsg = `Error: ${error.text}`;
+      }
+      
+      statusDiv.innerHTML = `<i class="bx bx-error text-error"></i> ${errorMsg}`;
+    }
+  }
+
+  // Formatear número de tarjeta
+  document.getElementById('cardNumber').addEventListener('input', function(e) {
+    let value = e.target.value.replace(/[^\d]/g, '');
+    let formattedValue = value.replace(/(.{4})/g, '$1 ').trim();
+    if (formattedValue.length > 19) {
+      formattedValue = formattedValue.substring(0, 19);
+    }
+    e.target.value = formattedValue;
+  });
+
+  // Formatear fecha de expiración
+  document.getElementById('cardExpiry').addEventListener('input', function(e) {
+    let value = e.target.value.replace(/[^\d]/g, '');
+    if (value.length >= 2) {
+      value = value.substring(0, 2) + '/' + value.substring(2, 4);
+    }
+    e.target.value = value;
+  });
+
+  // Solo números en CVV
+  document.getElementById('cardCVV').addEventListener('input', function(e) {
+    e.target.value = e.target.value.replace(/[^\d]/g, '');
+  });
+
+  // Mostrar campos según método de pago
+  document.querySelectorAll('input[name="payment"]').forEach(input => {
+    input.addEventListener('change', () => {
+      const tarjeta = document.getElementById('tarjeta').checked;
+      const oxxo = document.getElementById('oxxo').checked;
+
+      document.querySelector('.card-info').style.display = tarjeta ? 'block' : 'none';
+      document.querySelector('.oxxo-info').style.display = oxxo ? 'block' : 'none';
+
+      if (oxxo) {
+        oxxoReferenceCode = generateFictionalOxxoCode();
+        document.getElementById('oxxoReference').textContent = oxxoReferenceCode;
+        
+        const qrData = JSON.stringify({
+          type: 'DEMO_OXXO_PAYMENT',
+          reference: oxxoReferenceCode,
+          amount: totalAmount.toFixed(2),
+          currency: 'MXN',
+          merchant: 'Ferretería Kristal',
+          note: 'CÓDIGO DE DEMOSTRACIÓN - NO VÁLIDO PARA PAGOS REALES',
+          expires: new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString()
+        });
+        
+        setTimeout(() => generateQR(qrData, 'qrcode', 150), 100);
+      }
+    });
+  });
+
+  // Envío de formulario
+  document.getElementById('payment-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    customerName = document.getElementById('userName').value.trim();
+    customerEmail = document.getElementById('userEmail').value.trim();
+    const paymentMethod = document.querySelector('input[name="payment"]:checked');
+
+    if (!customerName) {
+      alert("Por favor ingresa tu nombre completo.");
+      return;
+    }
+
+    if (!customerEmail) {
+      alert("Por favor ingresa tu correo electrónico.");
+      return;
+    }
+
+    if (!paymentMethod) {
+      alert("Selecciona un método de pago.");
+      return;
+    }
+
+    const metodo = paymentMethod.value;
+
+    if (metodo === 'tarjeta') {
+      const cardNumber = document.getElementById('cardNumber').value.trim();
+      const cardExpiry = document.getElementById('cardExpiry').value.trim();
+      const cardCVV = document.getElementById('cardCVV').value.trim();
+
+      if (!cardNumber || cardNumber.length < 19) {
+        alert("Ingresa un número de tarjeta válido.");
+        return;
+      }
+      if (!cardExpiry || cardExpiry.length < 5) {
+        alert("Ingresa una fecha de expiración válida.");
+        return;
+      }
+      if (!cardCVV || cardCVV.length < 3) {
+        alert("Ingresa un CVV válido.");
+        return;
+      }
+
+      // Generar ticket
+      let ticketNumber = 'TK-' + Math.floor(Math.random() * 1000000).toString().padStart(6, '0');
+      let now = new Date();
+      let dateStr = now.toLocaleDateString('es-MX') + ' ' + now.toLocaleTimeString('es-MX');
+
+      let ticketText = `      FERRETERÍA KRISTAL
+      R.F.C. FKR910203XYZ
+     Av. Principal #123, Centro
+       Tel: 22-95-53-38-51
+
+TICKET No: ${ticketNumber}
+FECHA: ${dateStr}
+CLIENTE: ${customerName}
+EMAIL: ${customerEmail}
+
+========================================
+PRODUCTO           CANT  P.UNIT   SUBT.
+========================================\n`;
+
+      pedidoConfirmado.forEach(item => {
+        let nombre = item.name.length > 15 ? item.name.slice(0, 15) + '…' : item.name;
+        let subtotal = item.quantity * item.price;
+        ticketText += `${nombre.padEnd(18)} ${item.quantity.toString().padEnd(4)} $${item.price.toFixed(2).padEnd(7)} $${subtotal.toFixed(2)}\n`;
+      });
+
+      ticketText += "========================================\n";
+      ticketText += `TOTAL:                          $${totalAmount.toFixed(2)}\n`;
+      ticketText += `\nMétodo de pago: TARJETA **** ${cardNumber.slice(-4)}\n`;
+      ticketText += `Autorización: ${Math.floor(Math.random() * 1000000)}\n`;
+      ticketText += `\n        ¡Gracias por su compra!\n`;
+      ticketText += `    Conserve este comprobante\n`;
+
+      // Guardar datos del ticket
+      ticketData = {
+        ticketNumber,
+        customerName,
+        customerEmail,
+        date: dateStr,
+        totalAmount: totalAmount.toFixed(2),
+        ticketText,
+        productsList: pedidoConfirmado.map(item => `${item.name} x${item.quantity} - $${(item.price * item.quantity).toFixed(2)}`).join('\n')
+      };
+
+      document.getElementById('ticketCardText').textContent = ticketText;
+      document.getElementById('paymentCardModal').style.display = 'flex';
+
+      localStorage.removeItem('cart');
+      localStorage.removeItem('pedidoConfirmado');
+
+    } else if (metodo === 'oxxo') {
+      document.getElementById('oxxoCode').textContent = oxxoReferenceCode;
+      
+      const qrData = JSON.stringify({
+        type: 'DEMO_OXXO_PAYMENT',
+        reference: oxxoReferenceCode,
+        amount: totalAmount.toFixed(2),
+        currency: 'MXN',
+        merchant: 'Ferretería Kristal',
+        customer: customerName,
+        note: 'CÓDIGO DE DEMOSTRACIÓN - NO VÁLIDO PARA PAGOS REALES',
+        expires: new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString()
+      });
+      
+      setTimeout(() => generateQR(qrData, 'qrcodeModal', 200), 100);
+      
+      document.getElementById('paymentOxxoModal').style.display = 'flex';
+      
+      localStorage.removeItem('cart');
+      localStorage.removeItem('pedidoConfirmado');
+    }
+  });
+
+  // Funciones adicionales
+  function printTicket() {
+    const ticketContent = document.getElementById('ticketCardText').textContent;
+    const printWindow = window.open('', '_blank');
+    printWindow.document.write(`
+      <html>
+        <head>
+          <title>Ticket de Compra</title>
+          <style>
+            body { font-family: 'Courier New', monospace; font-size: 12px; margin: 20px; }
+            pre { white-space: pre-wrap; }
+          </style>
+        </head>
+        <body>
+          <pre>${ticketContent}</pre>
+        </body>
+      </html>
+    `);
+    printWindow.print();
+  }
+
+  function downloadQR() {
+    const canvas = document.getElementById('qrcodeModal');
+    const link = document.createElement('a');
+    link.download = `demo-oxxo-payment-${oxxoReferenceCode}.png`;
+    link.href = canvas.toDataURL();
+    link.click();
+  }
+
+  function shareCode() {
+    if (navigator.share) {
+      navigator.share({
+        title: 'Código de Pago OXXO (DEMO)',
+        text: `Código OXXO de demostración: ${oxxoReferenceCode}\nTotal: $${totalAmount.toFixed(2)}\n\nNOTA: Este es un código ficticio para demostración.`,
+      });
+    } else {
+      navigator.clipboard.writeText(`Código OXXO (DEMO): ${oxxoReferenceCode}\nTotal: $${totalAmount.toFixed(2)}\n\nNOTA: Código ficticio para demostración.`);
+      alert('Código copiado al portapapeles');
+    }
+  }
+
+  // Cierre de modales
+  document.getElementById('closeCardModal').onclick = () => {
+    document.getElementById('paymentCardModal').style.display = 'none';
+    window.location.href = 'index.html';
+  };
+
+  document.getElementById('closeOxxoModal').onclick = () => {
+    document.getElementById('paymentOxxoModal').style.display = 'none';
+    window.location.href = 'index.html';
+  };
+
+  // Cierre modal al hacer click afuera
+  window.onclick = (e) => {
+    ['paymentCardModal', 'paymentOxxoModal'].forEach(id => {
+      if (e.target === document.getElementById(id)) {
+        document.getElementById(id).style.display = 'none';
+        window.location.href = 'index.html';
+      }
+    });
+  };
+
+  // Prevenir cierre accidental
+  window.addEventListener('beforeunload', function(e) {
+    if (document.getElementById('paymentCardModal').style.display === 'flex' || 
+        document.getElementById('paymentOxxoModal').style.display === 'flex') {
+      e.preventDefault();
+      e.returnValue = '';
+    }
+  });
+</script>
+
+</body>
+</html>

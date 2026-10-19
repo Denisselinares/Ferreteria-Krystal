@@ -1,0 +1,1661 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categorías - Ferretería Krystal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="container flex">
+      <a href="index.html"><img src="imagenes/Logo-Ferretería.png" class="Logo-Ferretería" alt="Logo Ferretería" /></a>
+      <nav>
+        <ul class="nav-bar flex">
+          <li><a href="index.html" class="active">Inicio</a></li>
+          <li><a href="shop.html">Tienda</a></li>
+          <li><a href="categorias.html">Categorías</a></li>
+          <li><a href="about.html">Nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="#" id="logout-btn" style="display:none;">Cerrar sesión</a></li>
+          <li class="bag"><a href="cart.html"><i class="bx bx-shopping-bag"></i></a></li>
+        </ul>
+      </nav>
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Buscar productos..." />
+        <button id="searchBtn"><i class="bx bx-search"></i></button>
+      </div>
+    </div>
+  </header>
+
+    <main>
+        <!!--Selector de Categorías -- >
+        <section class="categorias">
+            <div class="container">
+                <h2>Selecciona una Categoría</h2>
+                <select id="categorySelect">
+                    <option value="all">Todas las categorías</option>
+                    <option value="electricas">Herramientas Eléctricas</option>
+                    <option value="manuales">Herramientas Manuales</option>
+                    <option value="tornilleria">Tornillería</option>
+                    <option value="pintura">Pintura</option>
+                    <option value="seguridad">Seguridad Industrial</option>
+                    <option value="cucharas">Cucharas de Albañil</option>
+                    <option value="accesorios">Accesorios para WC</option>
+                    <option value="focos">Focos Ahorradores</option>
+                    <option value="arandelas">Arandelas</option>
+                    <option value="brochas">Brochas para Pintar</option>
+                </select>
+            </div>
+        </section>
+        <section class="productos-destacados">
+    <div class="container">
+        <h2>Productos Destacados</h2>
+        <div class="pro-container">
+            <div class="pro-container">
+                <div class="pro" data-id="taladro01" data-category="electricas">
+                  <img src="imagenes/Taladro_inalambrico.webp" alt="Taladro Inalámbrico">
+                  <div class="des">
+                    <h5>Taladro Inalámbrico 20V</h5>
+                    <p>Potente y ergonómico</p>
+                    <h4>$1500.00 MXN</h4>
+                  </div>
+                  <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+                </div>
+              </div>
+              
+            <div class="pro" data-id="martillo01" data-category="manuales">
+                <img src="imagenes/Martillo_Acero.webp" alt="Martillo de Acero">
+                <div class="des">
+                  <h5>Martillo cabeza cónica 27 mm uña curva</h5>
+                  <p>Mango tubular</p>
+                  <h4>$170.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+              </div>
+              
+            <div class="pro" data-id="puntas01" data-category="tornilleria">
+                <img src="imagenes/Set_PuntasPlanas.webp" alt="Set de Puntas">
+                <div class="des">
+                  <h5>Set de 6 Puntas Planas Largo 2</h5>
+                  <p>Varias medidas</p>
+                  <h4>$75.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+              </div>
+              
+            <div class="pro" data-id="casco01" data-category="seguridad">
+                <img src="imagenes/Casco_seguridad.webp" alt="Casco de Seguridad">
+                <div class="des">
+                  <h5>Casco de Seguridad</h5>
+                  <p>Naranja, Ala Ancha</p>
+                  <h4>$99.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+              </div>
+              
+            <div class="pro" data-id="carretilla01" data-category="seguridad">
+                <img src="imagenes/Carretilla.jpg" alt="Carretilla">
+                <div class="des">
+                  <h5>Carretilla 5.5 ft³ roja</h5>
+                  <p>Imponchable, bastidor tubular, PRETUL</p>
+                  <h4>$1325.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+              </div>              
+              
+            <div class="pro" data-id="manguera01" data-category="seguridad">
+                <img src="imagenes/Manguera.webp" alt="Metro de manguera">
+                <div class="des">
+                  <h5>Metro de manguera</h5>
+                  <p>1/2" 3 capas en rollo de 100m, PRETUL</p>
+                  <h4>$900.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+              </div>
+              
+            <div class="pro" data-id="chaleco01" data-category="seguridad">
+                <img src="imagenes/Chaleco.webp" alt="Chaleco de Seguridad">
+                <div class="des">
+                  <h5>Chaleco de Seguridad</h5>
+                  <p>Reforzado, azul, M.</p>
+                  <h4>$267.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+              </div>
+              
+            <div class="pro" data-id="tenis01" data-category="seguridad">
+                <img src="imagenes/tenis de seguridad.jpg" alt="Tenis de Seguridad">
+                <div class="des">
+                  <h5>Tenis de seguridad #28</h5>
+                  <p>Casquillo metálico, negros</p>
+                  <h4>$685.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+              </div>
+              
+            <div class="pro" data-id="barboquejo01" data-category="seguridad">
+                <img src="imagenes/Barboquejo.jpg" alt="Barboquejo">
+                <div class="des">
+                  <h5>Barboquejo con barbilla</h5>
+                  <p>Casco de seguridad industrial</p>
+                  <h4>$85.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+              </div>
+              
+            <div class="pro" data-id="prensa01" data-category="seguridad">
+                <img src="imagenes/Prensas.webp" alt="Prensa de ajuste">
+                <div class="des">
+                  <h5>Prensa de ajuste rápido</h5>
+                  <p>12" uso rudo, cuerpo nylon. Expert</p>
+                  <h4>$315.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+              </div>
+              
+            <div class="pro" data-id="pintura01" data-category="pintura">
+                <img src="imagenes/pintura_trans.webp" alt="Pintura en Aerosol">
+                <div class="des">
+                  <h5>Pintura en aerosol</h5>
+                  <p>Transparente mate, bote tradicional, 400 ml</p>
+                  <h4>$55.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+              </div>
+              
+            <div class="pro" data-id="lentes01" data-category="seguridad">
+                <img src="imagenes/lentes.webp" alt="Lentes de seguridad">
+                <div class="des">
+                  <h5>Lentes de seguridad</h5>
+                  <p>Transparente</p>
+                  <h4>$45.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+              </div>
+              
+            <div class="pro" data-id="botas01" data-category="seguridad">
+                <img src="imagenes/Botas.png" alt="Botas de Seguridad">
+                <div class="des">
+                  <h5>Botas de seguridad café #26</h5>
+                  <p>Dieléctrica antifatiga</p>
+                  <h4>$234.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+              </div>
+              
+            <div class="pro" data-id="barra01" data-category="seguridad">
+                <img src="imagenes/Barra_Seguridad.jpg" alt="Barra de Seguridad">
+                <div class="des">
+                    <h5>Barra recta de seguridad</h5>
+                    <p>Acero inox, 1-1/4" * 40cm</p>
+                    <h4>$415.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+            
+            <div class="pro" data-id="triangulo01" data-category="seguridad">
+                <img src="imagenes/Triangulo seguridad.jpg" alt="Triangulo">
+                <div class="des">
+                    <h5>Triángulo de seguridad</h5>
+                    <p>11 " </p>
+                    <h4>$149.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>
+            </div>
+
+            <div class="pro" data-id="Guantes01" data-category="seguridad">
+                <img src="imagenes/Guantes.webp" alt="Guantes">
+                <div class="des">
+                    <h5>Guantes de algodón recubiertos de nitrilo</h5>
+                    <p>Puño de seguridad</p>
+                    <h4>$149.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="interruptor01" data-category="seguridad">
+                <img src="imagenes/Interruptor.png" alt="Interruptor">
+                <div class="des">
+                    <h5>Interruptor de seguridad 2 polos</h5>
+                    <p>30 A, Volteck</p>
+                    <h4>$269.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+            <div class="pro" data-id="rollo01"="seguridad">
+                <img src="imagenes/Rollo.jpg" alt="Rollo">
+                <div class="des">
+                    <h5>Rollo concertina alta seguridad</h5>
+                    <p>bote esbelto, 400 ml</p>
+                    <h4>$73.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="llave01" data-category="seguridad">
+                <img src="imagenes/llave de seguridad.jpg" alt="Llave de seguridad">
+                <div class="des">
+                    <h5>Llave esfera de seguridad de latón</h5>
+                    <p>175g, Foset</p>
+                    <h4>$47.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="rollom01" data-category="seguridad">
+                <img src="imagenes/rollo 30 metros.jpg" alt="Rollo de malla">
+                <div class="des">
+                    <h5>Rollo de 30 metros</h5>
+                    <p>Seguridad</p>
+                    <h4>$665.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="pinturaaerosol01" data-category="pintura">
+                <img src="imagenes/pintura_gris.webp" alt="Pintura en Aerosol">
+                <div class="des">
+                    <h5>Pintura en Aerosol</h5>
+                    <p>Gris acero, bote tradicional, 400 ml</p>
+                    <h4>$55.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="pinturarosa01" data-category="pintura">
+                <img src="imagenes/pintura_rosa.webp" alt="Pintura en Aerosol">
+                <div class="des">
+                    <h5>Pintura en Aerosol</h5>
+                    <p>Rosa mexicano, bote tradicional, 400 ml</p>
+                    <h4>$55.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="pinturaguinda01" data-category="pintura">
+                <img src="imagenes/pintura_guinda.webp" alt="Pintura en Aerosol">
+                <div class="des">
+                    <h5>Pintura en Aerosol</h5>
+                    <p>Guinda, bote tradicional, 400 ml</p>
+                    <h4>$55.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="pinturanegra01" data-category="pintura">
+                <img src="imagenes/pintura_negro.webp" alt="Pintura en Aerosol">
+                <div class="des">
+                    <h5>Pintura en Aerosol</h5>
+                    <p>Negro brillante, bote tradicional, 400ml</p>
+                    <h4>$55.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+            
+            <div class="pro" data-id="pinturablanca01" data-category="pintura">
+                <img src="imagenes/pintura_blanco.webp" alt="Pintura en Aerosol">
+                <div class="des">
+                    <h5>Pintura en Aerosol</h5>
+                    <p>Blanco brillante, bote tradicional,400ml</p>
+                    <h4>$55.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="pinturanegromate01" data-category="pintura">
+                <img src="imagenes/pintura_nema.webp" alt="Pintura en Aerosol">
+                <div class="des">
+                    <h5>Pintura en Aerosol</h5>
+                    <p>Negro mate, bote tradicional, 400 ml</p>
+                    <h4>$55.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="pinturablancomate01" data-category="pintura">
+                <img src="imagenes/pintura_Bama.webp" alt="Pintura en Aerosol">
+                <div class="des">
+                    <h5>Pintura en Aerosol</h5>
+                    <p>Blanco mate, bote tradicional, 400 ml</p>
+                    <h4>$55.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="pinturanaranja01" data-category="pintura">
+                <img src="imagenes/pintura_nara.webp" alt="Pintura en Aerosol">
+                <div class="des">
+                    <h5>Pintura en Aerosol</h5>
+                    <p>Naranja, bote tradicional, 400 ml</p>
+                    <h4>$55.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="pinturaazul01" data-category="pintura">
+                <img src="imagenes/pintura_Azul.webp" alt="Pintura en Aerosol">
+                <div class="des">
+                    <h5>Pintura en Aerosol</h5>
+                    <p>Azul holandés, bote tradicional, 400 ml</p>
+                    <h4>$55.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="pintura_amarilla01" data-category="pintura">
+                <img src="imagenes/pintura_amarilla.webp" alt="Pintura en Aerosol">
+                <div class="des">
+                    <h5>Pintura en Aerosol</h5>
+                    <p>Amarillo, bote tradicional, 400 ml</p>
+                    <h4>$55.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="pintura_verde01" data-category="pintura">
+                <img src="imagenes/pintura_verde.webp" alt="Pintura en Aerosol">
+                <div class="des">
+                    <h5>Pintura en Aerosol</h5>
+                    <p>Verde hoja, bote tradicional, 400 ml</p>
+                    <h4>$55.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="pintura_marfil01" data-category="pintura">
+                <img src="imagenes/pintura_marfil.webp" alt="Pintura en Aerosol">
+                <div class="des">
+                    <h5>Pintura en Aerosol</h5>
+                    <p>Marfil, bote tradicional, 400 ml</p>
+                    <h4>$55.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="cuchara01" data-category="cucharas">
+                <img src="imagenes/cuchara_12.webp" alt="Cuchara para Albañil">
+                <div class="des">
+                    <h5>Cuchara para Albañil</h5>
+                    <p>12" forjada tipo Filadelfia,mgo Comfort</p>
+                    <h4>$270.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="cuchara02" data-category="cucharas">
+                <img src="imagenes/cuchara_9.webp" alt="Cuchara para Albañil">
+                <div class="des">
+                    <h5>Cuchara para Albañil</h5>
+                    <p>9" forjada tipo Filadelfia, mgo Comfort</p>
+                    <h4>$220.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="cuchara03" data-category="cucharas">
+                <img src="imagenes/cuchara_10.webp" alt="Cuchara para Albañil">
+                <div class="des">
+                    <h5>Cuchara para Albañil</h5>
+                    <p>10" forjada tipo Filadelfia,mgo Comfort</p>
+                    <h4>$220.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="cuchara04" data-category="cucharas">
+                <img src="imagenes/cuchara_11.webp" alt="Cuchara para Albañil">
+                <div class="des">
+                    <h5>Cuchara para Albañil</h5>
+                    <p>11" forjada tipo Filadelfia,mgo Comfort</p>
+                    <h4>$260.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="cuchara05" data-category="cucharas">
+                <img src="imagenes/cuchara_9_.webp" alt="Cuchara para Albañil">
+                <div class="des">
+                    <h5>Cuchara para Albañil</h5>
+                    <p>9" forjada tipo Guadalajara</p>
+                    <h4>$250.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="cuchara06" data-category="cucharas">
+                <img src="imagenes/cuchara_6.webp" alt="Cuchara para Albañil">
+                <div class="des">
+                    <h5>Cuchara para Albañil</h5>
+                    <p>6" forjada tipo Centroamericana</p>
+                    <h4>$190.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="cuchara07" data-category="cucharas">
+                <img src="imagenes/cuchara_7.webp" alt="Cuchara para Albañil">
+                <div class="des">
+                    <h5>Cuchara para Albañil</h5>
+                    <p>7" forjada tipo Centroamericana</p>
+                    <h4>$189.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="cuchara08" data-category="cucharas">
+                <img src="imagenes/cuchara_8.webp" alt="Cuchara para Albañil">
+                <div class="des">
+                    <h5>Cuchara para Albañil</h5>
+                    <p>8" forjada tipo Centroamericana</p>
+                    <h4>$200.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="cuchara09" data-category="cucharas">
+                <img src="imagenes/cuchara_11_.webp" alt="Cuchara para Albañil">
+                <div class="des">
+                    <h5>Cuchara para Albañil</h5>
+                    <p>11" tipo Filadelfia, PRETUL</p>
+                    <h4>$115.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="cuchara10" data-category="cucharas">
+                <img src="imagenes/cuchara_9pre.webp" alt="Cuchara para Albañil">
+                <div class="des">
+                    <h5>Cuchara para Albañil</h5>
+                    <p>9" yesera, PRETUL</p>
+                    <h4>$100.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="palanca01" data-category="accesorios">
+                <img src="imagenes/palanca.webp" alt="Palanca para WC">
+                <div class="des">
+                    <h5>Palanca para WC</h5>
+                    <p>Palanca lateral metálica cromada para WC, FOSET</p>
+                    <h4>$145.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="boton_wc01" data-category="accesorios">
+                <img src="imagenes/boton_wc.webp" alt="Botón para WC">
+                <div class="des">
+                    <h5>Botón para WC</h5>
+                    <p>Botón frontal plástico cromado para WC, FOSET</p>
+                    <h4>$98.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="sapo01" data-category="accesorios">
+                <img src="imagenes/sapo_2.webp" alt="Sapo para WC">
+                <div class="des">
+                    <h5>Sapo para WC</h5>
+                    <p>2" para WC, PVC, trasparente, cadena inox, Foset</p>
+                    <h4>$42.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="juego01" data-category="accesorios">
+                <img src="imagenes/juego.webp" alt="Juego para WC">
+                <div class="des">
+                    <h5>Juego para WC</h5>
+                    <p>Jgo de reparación p/WC, c/válv ajuste y tornillos metálicos</p>
+                    <h4>$415.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="bidet01" data-category="accesorios">
+                <img src="imagenes/bidet.webp" alt="Bidet para WC">
+                <div class="des">
+                    <h5>Bidet para WC</h5>
+                    <p>2 piezas, Foset</p>
+                    <h4>$380.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="valvula01" data-category="accesorios">
+                <img src="imagenes/valvula.webp" alt="Valvula para WC">
+                <div class="des">
+                    <h5>Valvula para WC</h5>
+                    <p>Válvula de descarga sistema dual para tanque bajo, Foset</p>
+                    <h4>$310.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="desarmador01" data-category="manuales">
+                <img src="imagenes/desarmador.webp" alt="Desarmador manual">
+                <div class="des">
+                    <h5>Desarmador de precisión</h5>
+                    <p>Punta triwing Y000 mango ergonómico</p>
+                    <h4>$30.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="desarmador02" data-category="manuales">
+                <img src="imagenes/desarmador_trompo.webp" alt="Desarmador manual">
+                <div class="des">
+                    <h5>Desarmador tipo trompo</h5>
+                    <p>Con matraca, 6 puntas dobles, blíster</p>
+                    <h4>$100.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="desarmador03" data-category="manuales">
+                <img src="imagenes/desarmador_pl.webp" alt="Desarmador manual">
+                <div class="des">
+                    <h5>Desarmador de precisión</h5>
+                    <p>Pentalobe PL1 mango ergonómico</p>
+                    <h4>$30.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="desarmadores01" data-category="manuales">
+                <img src="imagenes/desarmador_jg.webp" alt="Desarmador manual">
+                <div class="des">
+                    <h5>Juego de 5 desarmadores </h5>
+                    <p>Mango Comfort Grip, Truper</p>
+                    <h4>$220.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="desarmadores02" data-category="manuales">
+                <img src="imagenes/desarmador_6.webp" alt="Desarmador manual">
+                <div class="des">
+                    <h5>Juego de 6 desarmadores </h5>
+                    <p>Largos de precisión, Truper</p>
+                    <h4>$250.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="desarmadores03" data-category="manuales">
+                <img src="imagenes/desarmador_16.webp" alt="Desarmador manual">
+                <div class="des">
+                    <h5>Juego de desarmador </h5>
+                    <p>Con 16 puntas intercambiables</p>
+                    <h4>$130.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="desarmador04" data-category="manuales">
+                <img src="imagenes/desarmador_matra.webp" alt="Desarmador manual">
+                <div class="des">
+                    <h5>Desarmador tipo matraca</h5>
+                    <p>Con 35 puntas y 18 dados, Pretul</p>
+                    <h4>$330.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="desarmador05" data-category="manuales">
+                <img src="imagenes/desarmador_10.webp" alt="Desarmador manual">
+                <div class="des">
+                    <h5>Desarmador punta Torx</h5>
+                    <p>T 10 mango de PVC, Pretul</p>
+                    <h4>$50.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="taladro01" data-category="electricas">
+                <img src="imagenes/taladro_.webp" alt="Herramientas Electricas">
+                <div class="des">
+                    <h5>Taladro 1/2"</h5>
+                    <p>20V, sin accesorios, MAX</p>
+                    <h4>$1730.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="desarmador06"  data-category="manuales">
+                <img src="imagenes/desarmador_15.webp" alt="Desarmador manual">
+                <div class="des">
+                    <h5>Desarmador punta Torx</h5>
+                    <p>T 15 mango de PVC, Pretul</p>
+                    <h4>$50.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="desarmador07" data-category="manuales">
+                <img src="imagenes/desarmador_20.webp" alt="Desarmador manual">
+                <div class="des">
+                    <h5>Desarmador punta Torx</h5>
+                    <p>T 20 mango de PVC, Pretul</p>
+                    <h4>$50.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="desarmador08" data-category="manuales">
+                <img src="imagenes/desarmador_25.webp" alt="Desarmador manual">
+                <div class="des">
+                    <h5>Desarmador punta Torx</h5>
+                    <p>T 25 mango de PVC, Pretul</p>
+                    <h4>$50.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="desarmador09" data-category="manuales">
+                <img src="imagenes/desarmador_27.webp" alt="Desarmador manual">
+                <div class="des">
+                    <h5>Desarmador punta Torx</h5>
+                    <p>T 27 mango de PVC, Pretul</p>
+                    <h4>$50.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="desarmador10" data-category="manuales">
+                <img src="imagenes/desarmador_30.webp" alt="Desarmador manual">
+                <div class="des">
+                    <h5>Desarmador punta Torx</h5>
+                    <p>T 30 mango de PVC, Pretul</p>
+                    <h4>$50.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="lampara01" data-category="focos">
+                <img src="imagenes/foco_13.webp" alt="Foco Ahorrador">
+                <div class="des">
+                    <h5>Lámpara doble</h5>
+                    <p>T4 13 W luz de día en caja, Volteck</p>
+                    <h4>$40.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="lampara02" data-category="focos">
+                <img src="imagenes/foco_24.webp" alt="Foco Ahorrador">
+                <div class="des">
+                    <h5>Lámpara triple</h5>
+                    <p>T4 24 W luz de día en caja, Volteck</p>
+                    <h4>$50.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="lampara03" data-category="focos">
+                <img src="imagenes/foco_es.webp" alt="Foco Ahorrador">
+                <div class="des">
+                    <h5>Lámpara espiral</h5>
+                    <p>T4 13 W luz de día en caja, Volteck</p>
+                    <h4>$60.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="lampara04" data-category="focos">
+                <img src="imagenes/foco_24es.webp" alt="Foco Ahorrador">
+                <div class="des">
+                    <h5>Lámpara espiral</h5>
+                    <p>T4 24 W luz cálida en caja, Volteck</p>
+                    <h4>$60.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="lampara05" data-category="focos">
+                <img src="imagenes/foco_cir.webp" alt="Foco Ahorrador">
+                <div class="des">
+                    <h5>Lámpara circular</h5>
+                    <p>T9 32 W luz de día en caja Volteck</p>
+                    <h4>$125.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="pack_lamparas01" data-category="focos">
+                <img src="imagenes/foco_caja.webp" alt="Foco Ahorrador">
+                <div class="des">
+                    <h5>Pack 4 lámparas espiral </h5>
+                    <p>T4 24 W luz de día, caja, Volteck</p>
+                    <h4>$235.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="lampara06" data-category="focos">
+                <img src="imagenes/foco_105.webp" alt="Foco Ahorrador">
+                <div class="des">
+                    <h5>Lámpara espiral </h5>
+                    <p>T5 105 W alta potencia luz de día</p>
+                    <h4>$270.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="lampara07" data-category="focos">
+                <img src="imagenes/foco_45.webp" alt="Foco Ahorrador">
+                <div class="des">
+                    <h5>Lámpara espiral </h5>
+                    <p>T5 45 W alta potencia luz de día</p>
+                    <h4>$130.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="taladro02" data-category="electricas">
+                <img src="imagenes/taladro_12.webp" alt="Herramientas Electricas">
+                <div class="des">
+                    <h5>Taladro 3/8" </h5>
+                    <p>12V, 1 batería 2Ah, PRO</p>
+                    <h4>$1530.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+            
+            <div class="pro" data-id="taladro03" data-category="electricas">
+                <img src="imagenes/taladro_pro.webp" alt="Herramientas Electricas">
+                <div class="des">
+                    <h5>Taladro compacto </h5>
+                    <p>3/8", 12V, PRO</p>
+                    <h4>$1210.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro"  data-id="taladro04" data-category="electricas">
+                <img src="imagenes/taladro_neu.webp" alt="Herramientas Electricas">
+                <div class="des">
+                    <h5>Taladro neumático reversible </h5>
+                    <p>1/2", Truper</p>
+                    <h4>$2010.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="taladro05" data-category="electricas">
+                <img src="imagenes/talador_re.webp" alt="Herramientas Electricas">
+                <div class="des">
+                    <h5>Taladro neumático reversible</h5>
+                    <p>3/8", Truper</p>
+                    <h4>$1350.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="batería01" data-category="electricas">
+                <img src="imagenes/taladro_ba.webp" alt="Herramientas Electricas">
+                <div class="des">
+                    <h5>Batería ion litio</h5>
+                    <p>12V, para taladro TALI-12PC, PRETUL</p>
+                    <h4>$500.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="taladro06" data-category="electricas">
+                <img src="imagenes/taladro_20.webp" alt="Herramientas Electricas">
+                <div class="des">
+                    <h5>Taladro 1/2"</h5>
+                    <p>20V, 1 batería 2Ah, PRETUL</p>
+                    <h4>$1150.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+            
+            <div class="pro" data-id="taladro_kit01" data-category="electricas">
+                <img src="imagenes/taladro_kit.webp" alt="Herramientas Electricas">
+                <div class="des">
+                    <h5>Kit taladro 3/8"</h5>
+                    <p>12V, 35 accesorios, en maleta, PRETUL</p>
+                    <h4>$1350.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="taladro_kit02" data-category="electricas">
+                <img src="imagenes/taladro_kit_.webp" alt="Herramientas Electricas">
+                <div class="des">
+                    <h5>Kit taladro 3/8"</h5>
+                    <p>12V, 33 accesorios, en estuche, PRETUL</p>
+                    <h4>$1250.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="taladro07" data-category="electricas">
+                <img src="imagenes/taladro_12_.webp" alt="Herramientas Electricas">
+                <div class="des">
+                    <h5>Taladro 3/8"</h5>
+                    <p>12V, 1 batería 2Ah, PRETUL</p>
+                    <h4>$780.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="talador08" data-category="electricas">
+                <img src="imagenes/taladro_20_.webp" alt="Herramientas Electricas">
+                <div class="des">
+                    <h5>Taladro 1/2"</h5>
+                    <p>20V, 2 baterías 2Ah, MAX</p>
+                    <h4>$3,700.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="taladro09" data-category="electricas">
+                <img src="imagenes/taladro_700.webp" alt="Herramientas Electricas">
+                <div class="des">
+                    <h5>Taladro 1/2"</h5>
+                    <p>700 W, industrial, Truper</p>
+                    <h4>$2290.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="taladro10" data-category="electricas">
+                <img src="imagenes/taladro_450.webp" alt="Herramientas Electricas">
+                <div class="des">
+                    <h5>Taladro 3/8"</h5>
+                    <p>450W, TRUPER INDUSTRIAL</p>
+                    <h4>$1200.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="taladro11" data-category="electricas">
+                <img src="imagenes/taladro_400.webp" alt="Herramientas Electricas">
+                <div class="des">
+                    <h5>Taladro 3/8"</h5>
+                    <p>400W, TRUPER PRO</p>
+                    <h4>$800.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+            
+            <div class="pro" data-id="bolsa01" data-category="arandelas">
+                <img src="imagenes/arandela_38.webp" alt="Arandelas">
+                <div class="des">
+                    <h5>Bolsa de 1 kilo arandelas</h5>
+                    <p>Planas galvanizadas 3/8", FIERO</p>
+                    <h4>$129.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="taladro12" data-category="electricas">
+                <img src="imagenes/taladro_espada.webp" alt="Herramientas Electricas">
+                <div class="des">
+                    <h5>Taladro tipo espada 1/2"</h5>
+                    <p>1150W, TRUPER INDUSTRIAL</p>
+                    <h4>$2,500.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="tornilleria01" data-category="tornilleria">
+                <img src="imagenes/tornilleria_38.webp" alt="Tornillería">
+                <div class="des">
+                    <h5>Bolsa con 50 tornillos </h5>
+                    <p>3/8" x 2-1/4" tipo coche, Fiero</p>
+                    <h4>$180.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="tornilleria02" data-category="tornilleria">
+                <img src="imagenes/tornilleria_60.webp" alt="Tornillería">
+                <div class="des">
+                    <h5>Bolsa con 60 tornillos </h5>
+                    <p>1/4" x 2" tipo máquina, FIERO</p>
+                    <h4>$110.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="tornilleria03" data-category="tornilleria">
+                <img src="imagenes/tornilleria_50.webp" alt="Tornillería">
+                <div class="des">
+                    <h5>Bolsa con 50 tornillos </h5>
+                    <p>1/4" x 3" tipo máquina, FIERO</p>
+                    <h4>$120.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="tornilleria04" data-category="tornilleria">
+                <img src="imagenes/tornilleria_100.webp" alt="Tornillería">
+                <div class="des">
+                    <h5>Bolsa con 100 tornillos </h5>
+                    <p>5/16" x 1/2" tipo máquina, FIERO</p>
+                    <h4>$130.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="tornilleria05" data-category="tornilleria">
+                <img src="imagenes/tornilleria_80.webp" alt="Tornillería">
+                <div class="des">
+                    <h5>Bolsa con 80 tornillos </h5>
+                    <p>5/16" x 3/4" tipo máquina, FIERO</p>
+                    <h4>$115.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="tornilleria06" data-category="tornilleria">
+                <img src="imagenes/tornilleria_60_.webp" alt="Tornillería">
+                <div class="des">
+                    <h5>Bolsa con 60 tornillos </h5>
+                    <p>5/16" x 1" tipo máquina, FIERO</p>
+                    <h4>$105.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="tornilleria07" data-category="tornilleria">
+                <img src="imagenes/tornilleria_80_.webp" alt="Tornillería">
+                <div class="des">
+                    <h5>Bolsa con 80 tornillos </h5>
+                    <p>5/16" x 2" tipo máquina, FIERO</p>
+                    <h4>$208.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="tornilleria08" data-category="tornilleria">
+                <img src="imagenes/tornilleria_60_6.webp" alt="Tornillería">
+                <div class="des">
+                    <h5>Bolsa con 60 tornillos </h5>
+                    <p>5/16" x 3" tipo máquina, FIERO</p>
+                    <h4>$235.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="tornilleria09" data-category="tornilleria">
+                <img src="imagenes/tornilleria_50_.webp" alt="Tornillería">
+                <div class="des">
+                    <h5>Bolsa con 50 tornillos </h5>
+                    <p>5/16" x 3-1/2" tipo máquina, FIERO</p>
+                    <h4>$220.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+            
+            <div class="pro"data-id="tornilleria10" data-category="tornilleria">
+                <img src="imagenes/tornilleria_50_5.webp" alt="Tornillería">
+                <div class="des">
+                    <h5>Bolsa con 50 tornillos </h5>
+                    <p>5/16" x 4" tipo máquina, FIERO</p>
+                    <h4>$235.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="tornilleria11" data-category="tornilleria">
+                <img src="imagenes/tornilleria_40.webp" alt="Tornillería">
+                <div class="des">
+                    <h5>Bolsa con 40 tornillos </h5>
+                    <p>3/8" x 1" tipo máquina, FIERO</p>
+                    <h4>$102.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="tornilleria12" data-category="tornilleria">
+                <img src="imagenes/tornilleria_30.webp" alt="Tornillería">
+                <div class="des">
+                    <h5>Bolsa con 30 tornillos </h5>
+                    <p>3/8" x 4" tipo máquina, FIERO</p>
+                    <h4>$210.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="tornilleria13" data-category="tornilleria">
+                <img src="imagenes/tornilleria_40_.webp" alt="Tornillería">
+                <div class="des">
+                    <h5>Bolsa con 40 tornillos </h5>
+                    <p>7/16" x 2" tipo máquina, FIERO</p>
+                    <h4>$211.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="tornilleria14" data-category="tornilleria">
+                <img src="imagenes/tornilleria_30_.webp" alt="Tornillería">
+                <div class="des">
+                    <h5>Bolsa con 30 tornillos </h5>
+                    <p>7/16" x 3" tipo máquina, FIERO</p>
+                    <h4>$215.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="tornilleria15" data-category="tornilleria">
+                <img src="imagenes/tornilleria_20.webp" alt="Tornillería">
+                <div class="des">
+                    <h5>Bolsa con 20 tornillos </h5>
+                    <p>7/16" x 3-1/2" tipo máquina, FIERO</p>
+                    <h4>$180.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="tornilleria16" data-category="tornilleria">
+                <img src="imagenes/tornilleria_20_.webp" alt="Tornillería">
+                <div class="des">
+                    <h5>Bolsa con 20 tornillos </h5>
+                    <p>7/16" x 4" tipo máquina, FIERO</p>
+                    <h4>$136.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="tornilleria17" data-category="tornilleria">
+                <img src="imagenes/tornilleria_450.webp" alt="Tornillería">
+                <div class="des">
+                    <h5>Bolsa con 450 tornillos </h5>
+                    <p>5/32" x 1/2" tipo estufa, FIERO</p>
+                    <h4>$126.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="tornilleria18" data-category="tornilleria">
+                <img src="imagenes/tornilleria_350.webp" alt="Tornillería">
+                <div class="des">
+                    <h5>Bolsa con 350 tornillos </h5>
+                    <p>5/32" x 3/4" tipo estufa, FIERO</p>
+                    <h4>$120.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="tornilleria19" data-category="tornilleria">
+                <img src="imagenes/tornilleria_6.webp" alt="Tornillería">
+                <div class="des">
+                    <h5>Bolsa con 6 tornillos </h5>
+                    <p>5/8" x 3-1/2" tipo máquina, FIERO</p>
+                    <h4>$108.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="tornilleria20" data-category="tornilleria">
+                <img src="imagenes/tornilleria_10.webp" alt="Tornillería">
+                <div class="des">
+                    <h5>Bolsa con 10 tornillos </h5>
+                    <p>5/8" x 2" tipo máquina, FIERO</p>
+                    <h4>$144.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="tornilleria21" data-category="tornilleria">
+                <img src="imagenes/tornilleria_15.webp" alt="Tornillería">
+                <div class="des">
+                    <h5>Bolsa con 15 tornillos </h5>
+                    <p>7/16" x 4-1/2" tipo máquina, FIERO</p>
+                    <h4>$134.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="tornilleria23" data-category="tornilleria">
+                <img src="imagenes/tornilleria_30_.webp" alt="Tornillería">
+                <div class="des">
+                    <h5>Bolsa con 30 tornillos </h5>
+                    <p>5/16" x 6" tipo máquina, FIERO</p>
+                    <h4>$184.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="tornilleria24" data-category="tornilleria">
+                <img src="imagenes/tornilleria_25.webp" alt="Tornillería">
+                <div class="des">
+                    <h5>Bolsa con 25 tornillos </h5>
+                    <p>1/4" x 5" tipo máquina, FIERO</p>
+                    <h4>$104.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="tornilleria25" data-category="tornilleria">
+                <img src="imagenes/tornilleria_30_1.webp" alt="Tornillería">
+                <div class="des">
+                    <h5>Bolsa con 30 tornillos </h5>
+                    <p>5/16" x 4-1/2" tipo máquina, FIERO</p>
+                    <h4>$149.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="arandela01" data-category="arandelas">
+                <img src="imagenes/arandela_1.webp" alt="Arandelas">
+                <div class="des">
+                    <h5>Bolsa de 1 kilo arandelas</h5>
+                    <p>Planas galvanizadas 1/8", FIERO</p>
+                    <h4>$129.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="arandela02" data-category="arandelas">
+                <img src="imagenes/arandela_1.webp" alt="Arandelas">
+                <div class="des">
+                    <h5>Bolsa de 1 kilo arandelas</h5>
+                    <p>Planas galvanizadas 1/4", FIERO</p>
+                    <h4>$129.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="arandela03" data-category="arandelas">
+                <img src="imagenes/arandela_12.webp" alt="Arandelas">
+                <div class="des">
+                    <h5>Bolsa de 1 kilo arandelas</h5>
+                    <p>Planas galvanizadas 1/2", FIERO</p>
+                    <h4>$129.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="arandela04" data-category="arandelas">
+                <img src="imagenes/arandela_316.webp" alt="Arandelas">
+                <div class="des">
+                    <h5>Bolsa de 1 kilo arandelas</h5>
+                    <p>Planas galvanizadas 3/16", FIERO</p>
+                    <h4>$129.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="arandela05" data-category="arandelas">
+                <img src="imagenes/arandela_516.webp" alt="Arandelas">
+                <div class="des">
+                    <h5>Bolsa de 1 kilo arandelas</h5>
+                    <p>Planas galvanizadas 5/16", FIERO</p>
+                    <h4>$129.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="arandela06" data-category="arandelas">
+                <img src="imagenes/arandela_716.webp" alt="Arandelas">
+                <div class="des">
+                    <h5>Bolsa de 1 kilo arandelas</h5>
+                    <p>Planas galvanizadas 7/16", FIERO</p>
+                    <h4>$129.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="arandela07" data-category="arandelas">
+                <img src="imagenes/arandela_18.webp" alt="Arandelas">
+                <div class="des">
+                    <h5>Bolsa con 300 arandelas </h5>
+                    <p>De presión de 1/8", FIERO</p>
+                    <h4>$11.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="arandela08" data-category="arandelas">
+                <img src="imagenes/arandela_532.webp" alt="Arandelas">
+                <div class="des">
+                    <h5>Bolsa con 300 arandelas </h5>
+                    <p>De presión de 5/32", FIERO</p>
+                    <h4>$15.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="brocha01" data-category="brochas">
+                <img src="imagenes/brocha_121.webp" alt="Brochas para Pintar">
+                <div class="des">
+                    <h5>Brocha uso general</h5>
+                    <p>De 2-1/2" con mango de plástico, Pretul</p>
+                    <h4>$24.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="arandela09" data-category="arandelas">
+                <img src="imagenes/arandela_316_.webp" alt="Arandelas">
+                <div class="des">
+                    <h5>Bolsa con 200 arandelas </h5>
+                    <p>De presión de 3/16", FIERO</p>
+                    <h4>$15.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="arandela10" data-category="arandelas">
+                <img src="imagenes/arandela_14.webp" alt="Arandelas">
+                <div class="des">
+                    <h5>Bolsa con 200 arandelas </h5>
+                    <p>De presión de 1/4", FIERO</p>
+                    <h4>$30.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="arandela11" data-category="arandelas">
+                <img src="imagenes/arandela_516_.webp" alt="Arandelas">
+                <div class="des">
+                    <h5>Bolsa con 150 arandelas </h5>
+                    <p>De presión de 5/16", FIERO</p>
+                    <h4>$35.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="arandela12" data-category="arandelas">
+                <img src="imagenes/arandela_38_.webp" alt="Arandelas">
+                <div class="des">
+                    <h5>Bolsa con 150 arandelas </h5>
+                    <p>De presión de 3/8", FIERO</p>
+                    <h4>$55.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="arandela14" data-category="arandelas">
+                <img src="imagenes/arandela_716_.webp" alt="Arandelas">
+                <div class="des">
+                    <h5>Bolsa con 100 arandelas </h5>
+                    <p>De presión de 7/16", FIERO</p>
+                    <h4>$55.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="arandela15" data-category="arandelas">
+                <img src="imagenes/arandela_12_.webp" alt="Arandelas">
+                <div class="des">
+                    <h5>Bolsa con 100 arandelas </h5>
+                    <p>De presión de 1/2", FIERO</p>
+                    <h4>$65.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="brocha_cerdas01" data-category="brochas">
+                <img src="imagenes/brocha_sin.webp" alt="Brochas para Pintar">
+                <div class="des">
+                    <h5>Brocha cerdas sintéticas</h5>
+                    <p>2" corte angular, mango de madera</p>
+                    <h4>$55.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="brocha02" data-category="brochas">
+                <img src="imagenes/brocha_3.webp" alt="Brochas para Pintar">
+                <div class="des">
+                    <h5>Brocha cerdas sintéticas</h5>
+                    <p>3" corte angular, mango de madera</p>
+                    <h4>$85.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="brocha03" data-category="brochas">
+                <img src="imagenes/brocha_1.webp" alt="Brochas para Pintar">
+                <div class="des">
+                    <h5>Brocha cerdas sintéticas</h5>
+                    <p>1" corte recto, mango de madera</p>
+                    <h4>$25.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="brocha04" data-category="brochas">
+                <img src="imagenes/brocha_2.webp" alt="Brochas para Pintar">
+                <div class="des">
+                    <h5>Brocha cerdas sintéticas</h5>
+                    <p>2" corte recto, mango de madera</p>
+                    <h4>$45.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="brocha05" data-category="brochas">
+                <img src="imagenes/brocha_sin3.webp" alt="Brochas para Pintar">
+                <div class="des">
+                    <h5>Brocha cerdas sintéticas</h5>
+                    <p>3" corte recto, mango de madera</p>
+                    <h4>$75.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="brocha06" data-category="brochas">
+                <img src="imagenes/brocha_4.webp" alt="Brochas para Pintar">
+                <div class="des">
+                    <h5>Brocha cerdas sintéticas</h5>
+                    <p>4" corte recto, mango de madera</p>
+                    <h4>$105.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="cepillo01" data-category="brochas">
+                <img src="imagenes/brocha_cep.webp" alt="Brochas para Pintar">
+                <div class="des">
+                    <h5>Cepillo para pintor</h5>
+                    <p>Superficies semirrugosas, TRUPER</p>
+                    <h4>$95.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="cepillo02" data-category="brochas">
+                <img src="imagenes/brocha_mul.webp" alt="Brochas para Pintar">
+                <div class="des">
+                    <h5>Cepillo para pintor</h5>
+                    <p>Multiusos con cerdas sintéticas, TRUPER</p>
+                    <h4>$65.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="cepillo03" data-category="brochas">
+                <img src="imagenes/brocha_sup.webp" alt="Brochas para Pintar">
+                <div class="des">
+                    <h5>Cepillo para pintor</h5>
+                    <p>Superficies rugosas, TRUPER</p>
+                    <h4>$95.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="pinceles01" data-category="brochas">
+                <img src="imagenes/brocha_jg.webp" alt="Brochas para Pintar">
+                <div class="des">
+                    <h5>Juego de pinceles </h5>
+                    <p>En blíster con 5 piezas, PRETUL</p>
+                    <h4>$50.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="brocha07" data-category="brochas">
+                <img src="imagenes/brocha_12.webp" alt="Brochas para Pintar">
+                <div class="des">
+                    <h5>Brocha profesional</h5>
+                    <p>De 1/2" con mango de plástico, Truper</p>
+                    <h4>$12.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="brocha08" data-category="brochas">
+                <img src="imagenes/brocha_1_.webp" alt="Brochas para Pintar">
+                <div class="des">
+                    <h5>Brocha profesional</h5>
+                    <p>De 1" con mango de plástico, Truper</p>
+                    <h4>$15.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="brocha09" data-category="brochas">
+                <img src="imagenes/brocha_2_.webp" alt="Brochas para Pintar">
+                <div class="des">
+                    <h5>Brocha profesional</h5>
+                    <p>De 2" con mango de plástico, Truper</p>
+                    <h4>$25.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="brocha10" data-category="brochas">
+                <img src="imagenes/brocha_3_.webp" alt="Brochas para Pintar">
+                <div class="des">
+                    <h5>Brocha profesional</h5>
+                    <p>De 3" con mango de plástico, Truper</p>
+                    <h4>$38.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="brocha11" data-category="brochas">
+                <img src="imagenes/brocha_4_.webp" alt="Brochas para Pintar">
+                <div class="des">
+                    <h5>Brocha profesional</h5>
+                    <p>De 4" con mango de plástico, Truper</p>
+                    <h4>$60.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="brocha13" data-category="brochas">
+                <img src="imagenes/brocha_5.webp" alt="Brochas para Pintar">
+                <div class="des">
+                    <h5>Brocha profesional</h5>
+                    <p>De 5" con mango de plástico, Truper</p>
+                    <h4>$78.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="brocha14" data-category="brochas">
+                <img src="imagenes/brocha_6.webp" alt="Brochas para Pintar">
+                <div class="des">
+                    <h5>Brocha profesional</h5>
+                    <p>De 6" con mango de plástico, Truper</p>
+                    <h4>$90.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="brocha15" data-category="brochas">
+                <img src="imagenes/brocha_12_.webp" alt="Brochas para Pintar">
+                <div class="des">
+                    <h5>Brocha profesional</h5>
+                    <p>De 1/2" mango de plástico, Truper Expert</p>
+                    <h4>$13.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="brocha16" data-category="brochas">
+                <img src="imagenes/brocha_1_1.webp" alt="Brochas para Pintar">
+                <div class="des">
+                    <h5>Brocha profesional</h5>
+                    <p>De 1" mango de plástico, Truper Expert</p>
+                    <h4>$18.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro"brocha17 data-id="" data-category="brochas">
+                <img src="imagenes/brocha_2_2.webp" alt="Brochas para Pintar">
+                <div class="des">
+                    <h5>Brocha profesional</h5>
+                    <p>De 2" mango de plástico, Truper Expert</p>
+                    <h4>$28.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="brocha18" data-category="brochas">
+                <img src="imagenes/brocha_3_3.webp" alt="Brochas para Pintar">
+                <div class="des">
+                    <h5>Brocha profesional</h5>
+                    <p>De 3" mango de plástico, Truper Expert</p>
+                    <h4>$45.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="brocha19" data-category="brochas">
+                <img src="imagenes/brocha_4_4.webp" alt="Brochas para Pintar">
+                <div class="des">
+                    <h5>Brocha profesional</h5>
+                    <p>De 4" mango de plástico, Truper Expert</p>
+                    <h4>$65.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="brocha20" data-category="brochas">
+                <img src="imagenes/brocha_5_.webp" alt="Brochas para Pintar">
+                <div class="des">
+                    <h5>Brocha profesional</h5>
+                    <p>De 5" mango de plástico, Truper Expert</p>
+                    <h4>$91.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="brocha21" data-category="brochas">
+                <img src="imagenes/brocha_6_.webp" alt="Brochas para Pintar">
+                <div class="des">
+                    <h5>Brocha profesional</h5>
+                    <p>De 6" mango de plástico, Truper Expert</p>
+                    <h4>$104.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="brocha_cerdas02" data-category="brochas">
+                <img src="imagenes/brocha_21.webp" alt="Brochas para Pintar">
+                <div class="des">
+                    <h5>Brocha cerdas sintéticas</h5>
+                    <p>2-1/2" corte recto, mango de madera</p>
+                    <h4>$62.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="brocha22" data-category="brochas">
+                <img src="imagenes/brocha_212.webp" alt="Brochas para Pintar">
+                <div class="des">
+                    <h5>Brocha profesional </h5>
+                    <p>De 2-1/2" mango de plástico, Expert</p>
+                    <h4>$35.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>
+
+            <div class="pro" data-id="brocha23" data-category="brochas">
+                <img src="imagenes/brocha_112.webp" alt="Brochas para Pintar">
+                <div class="des">
+                    <h5>Brocha pelo de camello</h5>
+                    <p>De 1-1/2" con mango de madera, Truper</p>
+                    <h4>$40.00 MXN</h4>
+                </div>
+                <button class="add-to-cart"><i class="bx bx-cart cart-icon"></i></button>   
+            </div>  
+
+        </div>
+     </div>
+    </section>
+    </main>
+    <!-- Script para agregar productos al carrito-->
+    <script>
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+          button.addEventListener('click', (e) => {
+            // Leer el carrito actualizado cada vez que se hace clic
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      
+            const product = e.target.closest('.pro');
+            const productId = product.getAttribute('data-id');
+            const productName = product.querySelector('h5').textContent;
+            const productPrice = parseFloat(product.querySelector('h4').textContent.split('$')[1]);
+      
+            const existingProduct = cart.find(item => item.id === productId);
+            if (existingProduct) {
+              existingProduct.quantity += 1;
+            } else {
+              cart.push({ id: productId, name: productName, price: productPrice, quantity: 1 });
+            }
+      
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(`${productName} ha sido agregado al carrito.`);
+          });
+        });
+      </script>
+
+    <!-- Script para filtrar productos por categoría-->
+    <script>
+        document.getElementById('categorySelect').addEventListener('change', function () {
+            let selectedCategory = this.value;
+            let products = document.querySelectorAll('.pro');
+            products.forEach(product => {
+                if (selectedCategory === 'all' || product.getAttribute('data-category') === selectedCategory) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        });
+    </script>
+    <script src="js/session.js"></script>
+
+    <!-- Script para buscar productos -->
+    <script>
+        document.getElementById("searchInput").addEventListener("input", function () {
+            const searchTerm = this.value.toLowerCase(); // Obtener el término de búsqueda
+            const products = document.querySelectorAll('.pro'); // Obtener todos los productos
+
+            products.forEach(product => {
+                const productName = product.querySelector('h5').textContent.toLowerCase(); // Obtener nombre del producto
+
+                // Si el nombre del producto incluye el término de búsqueda, mostrarlo
+                if (productName.includes(searchTerm)) {
+                    product.style.display = 'block'; 
+                } else {
+                    product.style.display = 'none'; // Si no coincide, ocultarlo
+                }
+            });
+        });
+    </script>
+    <script src="js/session.js"></script>
+
+      <!-- Footer -->
+  <footer>
+    <div class="footer-container container">
+      <div class="col">
+        <img class="Logo-Ferretería" src="imagenes/Logo-Ferretería.png" alt="Logo Ferretería" />
+        <h4>Contacto</h4>
+        <p><strong>Email:</strong> ferreteriakristal910@gmail.com</p>
+        <p><strong>Teléfono:</strong> 22-95-53-38-51</p>
+        <p><strong>Horario:</strong> 10:00 am - 8:30 pm, Lunes - Sábado</p>
+        <p><strong>Domingo:</strong> 10:00 am - 3:30 pm</p>
+      </div>
+      <div class="col">
+        <h4>Enlaces</h4>
+        <a href="about.html">Nosotros</a>
+        <a href="privacidad.html">Política de Privacidad</a>
+        <a href="terminos.html">Términos y Condiciones</a>
+      </div>
+      <div class="col">
+        <h4>Redes Sociales</h4>
+        <a href="#"><i class="bx bxl-facebook"></i> Facebook</a>
+        <a href="#"><i class="bx bxl-instagram"></i> Instagram</a>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>© 2025 - Ferretería Kristal. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
